@@ -1,0 +1,104 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: $all-white;
+}
+.navigation {
+    background-color: $nav-bg;
+    color: $lable-text-color;
+    height: 80px;
+    width: 100%;
+
+    &__title {
+        color: $text-border-color;
+    }
+
+    &__bar--left {
+        height: 10px;
+        width: 160px; 
+        padding-left: 48px;  
+    }   
+
+    &__bar--right {
+        height: 10px;
+        width: 160px; 
+        padding-left: 48px;  
+    }
+}
+
+.navigation__title {
+    @include displaytool (center, center, column);
+    padding: 16px 0px;
+}
+
+.navigation__bar {
+    color: $lable-text-color;
+    @include displaytool(space-between , center, row);
+
+    
+}
+
+.biography {
+    margin: 0px 16px;
+}
+
+.photo__gallery {
+    box-sizing: border-box;
+    @include displaytool (space-around, center, column);
+    width: 288px;
+    height: auto;
+
+    &__1 {
+        width: 100%;
+    }
+    &__2 {
+        width: 100%;
+    }
+    &__3 {
+        width: 100%;
+    }
+    &__4 {
+        width: 100%;
+    }
+    &__5 {
+        width: 100%;
+    }
+    &__6 {
+        width: 100%;
+    }
+    &__7 {
+        width: 100%;
+    }
+    &__8 {
+        width: 100%;
+    }
+    &__9 {
+        width: 100%;
+    }
+}
+
+
+
+
+.contact {
+    background-color: $nav-bg;
+}
+
+address {
+    color: $text-border-color;
+}
+
+p {
+    color: $primary-p-text;
+}
