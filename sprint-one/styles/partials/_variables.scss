@@ -1,9 +1,6 @@
+@use './mixins' as *;
 
 
-// viewscreen breakpoints live here
-$mobile-breakpoint: 600px;
-$tablet-breakpoint: 900px;
-$desktop-breakpoint: 1800px;
 
 // color palette lives here 
 //global
@@ -24,7 +21,7 @@ $primary-cta-hover2: #0065AD;
 $primary-cta: #323232;
 
 
-// useful functions 
+// main font 
 
 
 

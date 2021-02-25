@@ -1,15 +1,23 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 
+
+
 * {
     margin: 0;
     padding: 0;
-
-}
-
-a {
+    font-family: $font-stack;
+    box-sizing: content-box;
     text-decoration: none;
+}s
+
+p {
+    color: $primary-p-text;
+    font-size: .9rem;
+    padding: 0 2px;
+    line-height: 1.5;
 }
+
 
 body {
     background-color: $all-white;
@@ -20,20 +28,48 @@ body {
     height: 80px;
     width: 100%;
 
+    @include for-tablet {
+        @include displaytool (flex-start, center, row);
+    }
+
     &__title {
-        color: $text-border-color;
+        
+        @include for-tablet {
+            margin-left: 24px;
+
+        }
     }
 
     &__bar--left {
-        height: 10px;
-        width: 160px; 
+        height: 25px;
+        width: 130px; 
         padding-left: 48px;  
+        color: $all-merc;
+        border-bottom: 5px solid $all-white;
+        @include for-tablet {
+            @include displaytool (center,flex-end,none);
+            width: 45px;
+            border-bottom: 5px solid $all-white;
+            padding: 24px 18px;
+            margin-left: 25px;
+            color: $all-white;
+            font-size: .85rem;
+        }
     }   
 
     &__bar--right {
-        height: 10px;
-        width: 160px; 
+        height: 25px;
+        width: 130px; 
         padding-left: 48px;  
+        color: $text-border-color;
+        border-bottom: 0px solid $text-border-color;
+        @include for-tablet {
+            @include displaytool (center,flex-end,none);
+            width: 45px;
+            padding: 24px 18px;
+            margin-left: 25px;
+            font-size: .85rem;
+        }
     }
 }
 
@@ -41,64 +77,147 @@ body {
     @include displaytool (center, center, column);
     padding: 16px 0px;
 }
-
 .navigation__bar {
     color: $lable-text-color;
-    @include displaytool(space-between , center, row);
+    @include displaytool(space-between , center, none);
+}
 
-    
+.hero {
+
+    &__pic {
+    position: relative;
+    width: 100vw;
+    height: 32vh;
+    filter: opacity(60%);
+    background-color: $nav-bg;
+
+    @include for-tablet {
+
+    }
+    }
+
+    &__title {
+        position: absolute;
+        top: 150px;
+        left: 16px;
+        color: $all-white;
+        font-weight: 900;
+        font-size: 1.7rem;
+        width: 75%;
+        height: 60px;
+
+        @include for-tablet {
+
+        }
+    }
 }
 
 .biography {
     margin: 0px 16px;
+
+    &__title {
+        font-weight: 900;
+        padding-top: 32px;
+        padding-bottom: 24px;
+        font-size: 1.7rem;
+        color: $primary-p-text;
+    }
+
+    &__pic {
+        width: 100%;
+    }
+
+    &__quote {
+        padding-top: 24px;
+        padding-bottom: 10px;
+        font-size: 1.15rem;
+        color: $primary-p-text;
+        line-height: 1.6;
+
+        &__credit {
+            padding-bottom: 40px;
+            font-size: 1.15rem;
+            color: $primary-p-text;
+        }
+    }
+
+    &__subtitle {
+        padding-bottom: 24px;
+        font-size: 1.15rem;
+        color: $primary-p-text;
+    }
+
+    &__paragraph {
+        font-size: .85em;
+    }
 }
 
 .photo__gallery {
+    font-weight: 900;
     box-sizing: border-box;
-    @include displaytool (space-around, center, column);
-    width: 288px;
-    height: auto;
+    @include displaytool (flex-start, flex-start, column);
+    padding-top: 72px;
+    padding-bottom: 24px;
+    font-size: 1.8rem;
+    color: $primary-p-text;
 
-    &__1 {
-        width: 100%;
+    @include for-tablet {
+        
     }
-    &__2 {
+
+
+    &__1, &__2, &__3, &__4, &__5, &__6, &__7, &__8, &__9 {
+        @include displaytool (center, center, none);
         width: 100%;
-    }
-    &__3 {
-        width: 100%;
-    }
-    &__4 {
-        width: 100%;
-    }
-    &__5 {
-        width: 100%;
-    }
-    &__6 {
-        width: 100%;
-    }
-    &__7 {
-        width: 100%;
-    }
-    &__8 {
-        width: 100%;
-    }
-    &__9 {
-        width: 100%;
+        padding-bottom: 16px;
+
+        @include for-tablet {
+            @include displaytool (none, none, column-reverse);
+            flex-wrap: wrap;
+            width: 25%;
+            padding: 0px;
+            margin: 0px;
+        }
     }
 }
 
-
-
-
-.contact {
+.social__media {
     background-color: $nav-bg;
+    width: 100%;
+    color: $text-border-color;
+    display: block;
+    padding: 0 0px;
+
+    &__logo {
+        height: 30px;
+        width: 30px;
+        padding: 20px 16px;
+    }
+    &__title {
+        font-size: 2.8em;
+        font-weight: bold;
+        padding-top: 50px;
+        padding-left: 12px;
+    }
+}
+
+.contact__text {
+    color: $text-border-color;
+    font-weight: bold;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    padding-left: 12px;
+
+    &__secondary {
+        color: $text-border-color;
+        line-height: 1.5;
+        font-size: .9em;
+        padding-left: 12px;
+    }
 }
 
 address {
-    color: $text-border-color;
+    font-style: normal;
+    padding-bottom: 60px;
 }
 
-p {
-    color: $primary-p-text;
-}

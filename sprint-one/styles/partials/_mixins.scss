@@ -1,21 +1,24 @@
-@use './variables' as *;
+
+// viewscreen breakpoints live here
+$mobile-breakpoint: 288px;
+$tablet-breakpoint: 720px;
+$desktop-breakpoint: 1800px;
 
 
-
-@mixin mobile {
-    @media screen and (max-width: $mobile-breakpoint) {
+@mixin for-mobile {
+    @media (max-width: $mobile-breakpoint) {
         @content;
     }
 }
 
-@mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
+@mixin for-tablet {
+    @media (min-width: $tablet-breakpoint) {
         @content;
     }
 }
 
-@mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
+@mixin for-desktop {
+    @media (min-width: $desktop-breakpoint) {
         @content;
     }
 }
@@ -29,5 +32,42 @@
 
 @mixin gallerysizes {
     width: 100%;
-    
 }
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('/assets/_Global_Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('/assets/_Global_Font/AvenirNextProLT/Linotype-AvenirNextLTPro-It.otf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('/assets/_Global_Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Demi.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('/assets/_Global_Font/AvenirNextProLT/Linotype-AvenirNextLTPro-BoldIt.otf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('/assets/_Global_Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Bold.otf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+$font-stack: 'Avenir';
