@@ -32,7 +32,6 @@
   margin: 0;
   padding: 0;
   font-family: "Avenir";
-  box-sizing: content-box;
   text-decoration: none;
 }
 
@@ -45,6 +44,7 @@ s p {
 
 body {
   background-color: #FFFFFF;
+  margin: 0;
 }
 
 .navigation {
@@ -79,10 +79,10 @@ body {
     justify-content: center;
     align-items: flex-end;
     flex-direction: none;
-    width: 45px;
+    width: 35px;
     border-bottom: 5px solid #FFFFFF;
-    padding: 24px 18px;
-    margin-left: 25px;
+    padding: 24px 25px;
+    margin-left: 50px;
     color: #FFFFFF;
     font-size: 0.85rem;
   }
@@ -102,7 +102,7 @@ body {
     flex-direction: none;
     width: 45px;
     padding: 24px 18px;
-    margin-left: 25px;
+    margin-left: 50px;
     font-size: 0.85rem;
   }
 }
@@ -130,6 +130,11 @@ body {
   filter: opacity(60%);
   background-color: #323232;
 }
+@media (min-width: 720px) {
+  .hero__pic {
+    height: 400px;
+  }
+}
 .hero__title {
   position: absolute;
   top: 150px;
@@ -140,8 +145,20 @@ body {
   width: 75%;
   height: 60px;
 }
+@media (min-width: 720px) {
+  .hero__title {
+    top: 220px;
+    font-size: 3.5rem;
+  }
+}
+
 .biography {
   margin: 0px 16px;
+}
+@media (min-width: 720px) {
+  .biography {
+    margin: 0px 24px;
+  }
 }
 .biography__title {
   font-weight: 900;
@@ -150,8 +167,18 @@ body {
   font-size: 1.7rem;
   color: #323232;
 }
+@media (min-width: 720px) {
+  .biography__title {
+    font-size: 2.2rem;
+  }
+}
 .biography__pic {
   width: 100%;
+}
+@media (min-width: 720px) {
+  .biography__pic {
+    width: 100%;
+  }
 }
 .biography__quote {
   padding-top: 24px;
@@ -160,50 +187,108 @@ body {
   color: #323232;
   line-height: 1.6;
 }
+@media (min-width: 720px) {
+  .biography__quote {
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-right: 28px;
+  }
+}
 .biography__quote__credit {
   padding-bottom: 40px;
   font-size: 1.15rem;
   color: #323232;
+}
+@media (min-width: 720px) {
+  .biography__quote__credit {
+    font-size: 0.95em;
+  }
 }
 .biography__subtitle {
   padding-bottom: 24px;
   font-size: 1.15rem;
   color: #323232;
 }
+@media (min-width: 720px) {
+  .biography__subtitle {
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
+}
+.biography__body {
+  color: #323232;
+}
+@media (min-width: 720px) {
+  .biography__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+}
 .biography__paragraph {
   font-size: 0.85em;
 }
+@media (min-width: 720px) {
+  .biography__paragraph {
+    margin-right: 24px;
+    line-height: 1.8;
+    font-size: 0.79em;
+  }
+}
+.biography__paragraph2 {
+  font-size: 0.85em;
+}
+@media (min-width: 720px) {
+  .biography__paragraph2 {
+    line-height: 1.8;
+    font-size: 0.79em;
+  }
+}
 
-.photo__gallery {
+.photo__gallery__title {
   font-weight: 900;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: row;
   padding-top: 72px;
   padding-bottom: 24px;
   font-size: 1.8rem;
   color: #323232;
+  padding-left: 24px;
 }
-.photo__gallery__1, .photo__gallery__2, .photo__gallery__3, .photo__gallery__4, .photo__gallery__5, .photo__gallery__6, .photo__gallery__7, .photo__gallery__8, .photo__gallery__9 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: none;
+@media (min-width: 720px) {
+  .photo__gallery__title {
+    font-size: 2rem;
+  }
+}
+.photo__gallery__all {
+  padding: 0 16px;
+}
+@media (min-width: 720px) {
+  .photo__gallery__all {
+    box-sizing: content-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 26px;
+    padding-left: 24px;
+  }
+}
+.photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
   width: 100%;
   padding-bottom: 16px;
 }
 @media (min-width: 720px) {
-  .photo__gallery__1, .photo__gallery__2, .photo__gallery__3, .photo__gallery__4, .photo__gallery__5, .photo__gallery__6, .photo__gallery__7, .photo__gallery__8, .photo__gallery__9 {
-    display: flex;
-    justify-content: none;
-    align-items: none;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    width: 25%;
-    padding: 0px;
-    margin: 0px;
+  .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
+    width: 210px;
+    height: 126px;
+    padding-right: 20px;
+    padding-bottom: 24px;
   }
 }
 

@@ -7,8 +7,8 @@
     margin: 0;
     padding: 0;
     font-family: $font-stack;
-    box-sizing: content-box;
     text-decoration: none;
+
 }s
 
 p {
@@ -21,6 +21,7 @@ p {
 
 body {
     background-color: $all-white;
+    margin: 0;    
 }
 .navigation {
     background-color: $nav-bg;
@@ -48,10 +49,10 @@ body {
         border-bottom: 5px solid $all-white;
         @include for-tablet {
             @include displaytool (center,flex-end,none);
-            width: 45px;
+            width: 35px;
             border-bottom: 5px solid $all-white;
-            padding: 24px 18px;
-            margin-left: 25px;
+            padding: 24px 25px;
+            margin-left: 50px;
             color: $all-white;
             font-size: .85rem;
         }
@@ -67,7 +68,7 @@ body {
             @include displaytool (center,flex-end,none);
             width: 45px;
             padding: 24px 18px;
-            margin-left: 25px;
+            margin-left: 50px;
             font-size: .85rem;
         }
     }
@@ -92,6 +93,7 @@ body {
     background-color: $nav-bg;
 
     @include for-tablet {
+        height: 400px;
 
     }
     }
@@ -107,7 +109,8 @@ body {
         height: 60px;
 
         @include for-tablet {
-
+            top: 220px;
+            font-size: 3.5rem;
         }
     }
 }
@@ -115,16 +118,28 @@ body {
 .biography {
     margin: 0px 16px;
 
+    @include for-tablet{
+        margin: 0px 24px
+    }
+
     &__title {
         font-weight: 900;
         padding-top: 32px;
         padding-bottom: 24px;
         font-size: 1.7rem;
         color: $primary-p-text;
+
+        @include for-tablet{
+            font-size: 2.2rem;
+        }
     }
 
     &__pic {
         width: 100%;
+
+        @include for-tablet {
+            width: 100%;
+        }
     }
 
     &__quote {
@@ -134,10 +149,20 @@ body {
         color: $primary-p-text;
         line-height: 1.6;
 
+        @include for-tablet {
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin-right: 28px;
+        }
+
         &__credit {
             padding-bottom: 40px;
             font-size: 1.15rem;
             color: $primary-p-text;
+
+            @include for-tablet {
+                font-size: .95em;
+            }
         }
     }
 
@@ -145,41 +170,84 @@ body {
         padding-bottom: 24px;
         font-size: 1.15rem;
         color: $primary-p-text;
+
+        @include for-tablet {
+            font-size: 1.4rem;
+            font-weight: 900;
+        }
+    }
+
+    &__body {
+        color: $primary-p-text;
+
+        @include for-tablet{
+            @include displaytool(center, center, row); 
+            
+        }
     }
 
     &__paragraph {
         font-size: .85em;
+        
+        @include for-tablet {
+            margin-right: 24px;
+            line-height: 1.8;
+            font-size: .79em;
+        }
+    }
+
+    &__paragraph2 {
+        font-size: .85em;
+
+        @include for-tablet {
+            line-height: 1.8;
+            font-size: .79em;
+        }
     }
 }
 
 .photo__gallery {
-    font-weight: 900;
-    box-sizing: border-box;
-    @include displaytool (flex-start, flex-start, column);
-    padding-top: 72px;
-    padding-bottom: 24px;
-    font-size: 1.8rem;
-    color: $primary-p-text;
-
-    @include for-tablet {
-        
+    &__title {
+        font-weight: 900;
+        box-sizing: border-box;
+        @include displaytool (flex-start, flex-start, row);
+        padding-top: 72px;
+        padding-bottom: 24px;
+        font-size: 1.8rem;
+        color: $primary-p-text;
+        padding-left: 24px;
+        @include for-tablet {
+            font-size: 2rem;
+        }
     }
 
+    &__all {
+        
 
-    &__1, &__2, &__3, &__4, &__5, &__6, &__7, &__8, &__9 {
-        @include displaytool (center, center, none);
+        padding: 0 16px;
+        @include for-tablet {
+            box-sizing: content-box;
+            @include displaytool (flex-start,flex-start,row);
+            flex-wrap: wrap;
+            padding-bottom: 26px;
+            padding-left: 24px;
+        }
+    }
+
+    &__item1, &__item2, &__item3, &__item4, &__item5, &__item6, &__item7, &__item8, &__item9 {
         width: 100%;
         padding-bottom: 16px;
 
         @include for-tablet {
-            @include displaytool (none, none, column-reverse);
-            flex-wrap: wrap;
-            width: 25%;
-            padding: 0px;
-            margin: 0px;
+            width: 210px;
+            height: 126px;
+            padding-right: 20px;
+            padding-bottom: 24px;
         }
     }
 }
+
+
 
 .social__media {
     background-color: $nav-bg;
@@ -187,6 +255,11 @@ body {
     color: $text-border-color;
     display: block;
     padding: 0 0px;
+
+    @include for-tablet {
+    
+    }
+    
 
     &__logo {
         height: 30px;
@@ -202,6 +275,7 @@ body {
 }
 
 .contact__text {
+
     color: $text-border-color;
     font-weight: bold;
     line-height: 1.5em;
