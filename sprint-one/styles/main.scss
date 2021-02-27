@@ -1,6 +1,5 @@
-@use './partials/variables' as *;
-@use './partials/mixins' as *;
 
+@use "./partials/partials" as *;
 
 
 * {
@@ -46,9 +45,9 @@ body {
     }
 
     &__bar--left {
+        @include displaytool (center, center, none);
         height: 25px;
-        width: 110px; 
-        padding-left: 40px;  
+        width: 160px;  
         color: $all-merc;
         border-bottom: 5px solid $all-white;
         @include for-tablet {
@@ -63,8 +62,9 @@ body {
     }   
 
     &__bar--right {
+        @include displaytool (center, center, none);
         height: 25px;
-        width: 110px;  
+        width: 160px;  
         color: $text-border-color;
         border-bottom: 0px solid $text-border-color;
         @include for-tablet {
@@ -238,7 +238,7 @@ body {
     }
 
     &__item1, &__item2, &__item3, &__item4, &__item5, &__item6, &__item7, &__item8, &__item9 {
-        width: 100%;
+        width: 288px;
         padding-bottom: 16px;
 
         @include for-tablet {
@@ -257,7 +257,6 @@ body {
     width: 100%;
     color: $text-border-color;
     display: block;
-    padding: 0 0px;
 
     @include for-tablet {
     
@@ -265,28 +264,43 @@ body {
     
 
     &__logo {
-        height: 30px;
+        height: 28px;
         width: 30px;
-        padding: 20px 16px;
+        padding: 25px 12px;
+
+        &--instagram {
+        height: 28px;
+        width: 30px;
+        padding: 25px 12px;
+        }
+
+        &--twitter {
+        height: 26px;
+        width: 30px;
+        padding: 25px 12px;
+        }
     }
     &__title {
-        font-size: 2.8em;
+        font-size: 2.5em;
         font-weight: bold;
         padding-top: 50px;
         padding-left: 12px;
     }
 }
 
-.contact__text {
+.contact {
+    padding-top: 16px;
+}
 
+.contact__text {
     color: $text-border-color;
     font-weight: bold;
     line-height: 1.5em;
-    font-size: 1.1em;
+    font-size: 1em;
     padding-left: 12px;
 
     &__secondary {
-        color: $text-border-color;
+        color: $lable-text-colo;
         line-height: 1.5;
         font-size: .9em;
         padding-left: 12px;
