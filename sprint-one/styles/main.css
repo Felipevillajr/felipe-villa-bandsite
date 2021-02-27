@@ -199,9 +199,9 @@ body {
 }
 @media (min-width: 720px) {
   .biography__quote {
-    font-size: 1.4rem;
+    font-size: 1.48rem;
     font-weight: 900;
-    margin-right: 28px;
+    margin-right: 24px;
   }
 }
 .biography__quote__credit {
@@ -221,7 +221,7 @@ body {
 }
 @media (min-width: 720px) {
   .biography__subtitle {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 900;
   }
 }
@@ -243,7 +243,7 @@ body {
   .biography__paragraph {
     margin-right: 24px;
     line-height: 1.8;
-    font-size: 0.79em;
+    font-size: 0.89em;
   }
 }
 .biography__paragraph2 {
@@ -252,7 +252,7 @@ body {
 @media (min-width: 720px) {
   .biography__paragraph2 {
     line-height: 1.8;
-    font-size: 0.79em;
+    font-size: 0.89em;
   }
 }
 
@@ -272,10 +272,12 @@ body {
 @media (min-width: 720px) {
   .photo__gallery__title {
     font-size: 2rem;
+    padding-bottom: 40px;
   }
 }
 .photo__gallery__all {
   padding: 0 16px;
+  padding-bottom: 30px;
 }
 @media (min-width: 720px) {
   .photo__gallery__all {
@@ -285,43 +287,80 @@ body {
     align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-bottom: 26px;
-    padding-left: 24px;
   }
 }
 .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   width: 288px;
   padding-bottom: 16px;
 }
 @media (min-width: 720px) {
   .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
-    width: 210px;
+    width: 224px;
     height: 126px;
-    padding-right: 20px;
-    padding-bottom: 24px;
+    padding: 10px;
   }
 }
 
-.social__media {
+footer {
   background-color: #323232;
+}
+
+.social__media {
   width: 100%;
   color: #E1E1E1;
   display: block;
 }
-.social__media__logo {
-  height: 28px;
-  width: 30px;
-  padding: 25px 12px;
+@media (min-width: 720px) {
+  .social__media {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 15px 0px;
+  }
 }
 .social__media__logo--instagram {
   height: 28px;
   width: 30px;
   padding: 25px 12px;
 }
+@media (min-width: 720px) {
+  .social__media__logo--instagram {
+    padding: 0px;
+    position: relative;
+    left: 10px;
+    height: 25px;
+  }
+}
+.social__media__logo--facebook {
+  height: 28px;
+  width: 30px;
+  padding: 25px 12px;
+}
+@media (min-width: 720px) {
+  .social__media__logo--facebook {
+    padding: 0px;
+    position: relative;
+    left: 35px;
+    height: 25px;
+  }
+}
 .social__media__logo--twitter {
   height: 26px;
   width: 30px;
   padding: 25px 12px;
+}
+@media (min-width: 720px) {
+  .social__media__logo--twitter {
+    padding: 0px;
+    position: relative;
+    left: 65px;
+    height: 25px;
+  }
 }
 .social__media__title {
   font-size: 2.5em;
@@ -329,11 +368,48 @@ body {
   padding-top: 50px;
   padding-left: 12px;
 }
+@media (min-width: 720px) {
+  .social__media__title {
+    padding: 24px;
+    font-size: 2.4em;
+    color: #FFFFFF;
+  }
+}
+.social__media__bandsite__logo {
+  display: none;
+  background-image: url(/assets/Logo/Logo-bandsite.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 75px;
+  height: auto;
+}
+@media (min-width: 720px) {
+  .social__media__bandsite__logo {
+    display: flex;
+    padding: 24px;
+    position: relative;
+    left: 252px;
+  }
+}
 
 .contact {
   padding-top: 16px;
+  background-color: #323232;
+  width: 100%;
 }
-
+@media (min-width: 720px) {
+  .contact__section2 {
+    position: relative;
+    left: 30px;
+  }
+}
+@media (min-width: 720px) {
+  .contact__section3 {
+    position: relative;
+    left: 75px;
+  }
+}
 .contact__text {
   color: #E1E1E1;
   font-weight: bold;
@@ -342,13 +418,37 @@ body {
   padding-left: 12px;
 }
 .contact__text__secondary {
-  color: #E1E1E1;
+  color: #AFAFAF;
   line-height: 1.5;
   font-size: 0.9em;
   padding-left: 12px;
 }
+.contact__copyright {
+  color: #AFAFAF;
+  line-height: 1.5;
+  font-size: 0.9em;
+  padding-left: 12px;
+}
+@media (min-width: 720px) {
+  .contact__copyright {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 35px;
+    padding-top: 10px;
+  }
+}
 
 address {
   font-style: normal;
-  padding-bottom: 60px;
+  padding-bottom: 0px;
+}
+@media (min-width: 720px) {
+  address {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
 }/*# sourceMappingURL=main.css.map */

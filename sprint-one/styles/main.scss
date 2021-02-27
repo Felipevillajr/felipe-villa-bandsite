@@ -7,7 +7,6 @@
     padding: 0;
     font-family: $font-stack;
     text-decoration: none;
-
 }s
 
 p {
@@ -153,9 +152,9 @@ body {
         line-height: 1.6;
 
         @include for-tablet {
-            font-size: 1.4rem;
+            font-size: 1.48rem;
             font-weight: 900;
-            margin-right: 28px;
+            margin-right: 24px;
         }
 
         &__credit {
@@ -175,7 +174,7 @@ body {
         color: $primary-p-text;
 
         @include for-tablet {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 900;
         }
     }
@@ -195,7 +194,7 @@ body {
         @include for-tablet {
             margin-right: 24px;
             line-height: 1.8;
-            font-size: .79em;
+            font-size: .89em;
         }
     }
 
@@ -204,7 +203,7 @@ body {
 
         @include for-tablet {
             line-height: 1.8;
-            font-size: .79em;
+            font-size: .89em;
         }
     }
 }
@@ -221,63 +220,84 @@ body {
         padding-left: 24px;
         @include for-tablet {
             font-size: 2rem;
+            padding-bottom: 40px;
         }
     }
 
     &__all {
-        
-
         padding: 0 16px;
+        padding-bottom: 30px;
         @include for-tablet {
             box-sizing: content-box;
             @include displaytool (flex-start,flex-start,row);
             flex-wrap: wrap;
-            padding-bottom: 26px;
-            padding-left: 24px;
         }
     }
 
     &__item1, &__item2, &__item3, &__item4, &__item5, &__item6, &__item7, &__item8, &__item9 {
+        @include displaytool (center, center, row);
         width: 288px;
         padding-bottom: 16px;
 
         @include for-tablet {
-            width: 210px;
+            width: 224px;
             height: 126px;
-            padding-right: 20px;
-            padding-bottom: 24px;
+            padding: 10px;
         }
     }
 }
 
-
+footer {
+    background-color: $nav-bg;
+}
 
 .social__media {
-    background-color: $nav-bg;
     width: 100%;
     color: $text-border-color;
     display: block;
-
     @include for-tablet {
-    
+        @include displaytool(flex-start, center, row);
+        padding: 15px 0px;
     }
     
 
     &__logo {
-        height: 28px;
-        width: 30px;
-        padding: 25px 12px;
+
 
         &--instagram {
-        height: 28px;
-        width: 30px;
-        padding: 25px 12px;
+            height: 28px;
+            width: 30px;
+            padding: 25px 12px;
+            @include for-tablet {
+                padding: 0px;
+                position: relative;
+                left: 10px;
+                height: 25px;
+            }
+        }
+
+        &--facebook{
+            height: 28px;
+            width: 30px;
+            padding: 25px 12px;
+            @include for-tablet {
+                padding: 0px;
+                position: relative;
+                left: 35px;
+                height: 25px;
+            }
         }
 
         &--twitter {
-        height: 26px;
-        width: 30px;
-        padding: 25px 12px;
+            height: 26px;
+            width: 30px;
+            padding: 25px 12px;
+            @include for-tablet {
+                padding: 0px;
+                position: relative;
+                left: 65px;
+                height: 25px;
+            }
         }
     }
     &__title {
@@ -285,30 +305,84 @@ body {
         font-weight: bold;
         padding-top: 50px;
         padding-left: 12px;
+        @include for-tablet {
+            padding: 24px;
+            font-size: 2.4em;
+            color: $all-white;
+        }
+    }
+    &__bandsite__logo {
+        display: none;
+        background-image: url(/assets/Logo/Logo-bandsite.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 75px;
+        height: auto;
+        @include for-tablet {
+            display: flex;
+            padding: 24px;
+            position: relative;
+            left: 252px;
+        }
     }
 }
 
+
 .contact {
     padding-top: 16px;
-}
+    background-color: $nav-bg;
+    width: 100%;
 
-.contact__text {
-    color: $text-border-color;
-    font-weight: bold;
-    line-height: 1.5em;
-    font-size: 1em;
-    padding-left: 12px;
+    &__section2 {
+        @include for-tablet {
+            position: relative;
+            left: 30px;
+        }
+        
+    }
 
-    &__secondary {
-        color: $lable-text-colo;
+    &__section3 {
+        @include for-tablet {
+            position: relative;
+            left: 75px;
+        }
+        
+    }
+
+    &__text {
+        color: $text-border-color;
+        font-weight: bold;
+        line-height: 1.5em;
+        font-size: 1em;
+        padding-left: 12px;
+
+        &__secondary {
+            color: $lable-text-color;
+            line-height: 1.5;
+            font-size: .9em;
+            padding-left: 12px;
+        }
+    }
+
+    &__copyright {
+        color: $lable-text-color;
         line-height: 1.5;
         font-size: .9em;
         padding-left: 12px;
+        @include for-tablet {
+            @include displaytool( flex-start, center, row);
+            padding-bottom: 35px;
+            padding-top: 10px;
+        }
     }
 }
 
 address {
     font-style: normal;
-    padding-bottom: 60px;
+    padding-bottom: 0px;
+    @include for-tablet {
+        @include displaytool(flex-start, center, row);
+    }
 }
 
