@@ -25,6 +25,9 @@ body {
     padding: 0;
     overflow-x: hidden; 
 }
+
+// navigation bar lives here
+
 .navigation {
     background-color: $nav-bg;
     color: $lable-text-color;
@@ -41,7 +44,8 @@ body {
             margin-left: 24px;
         }
         @include for-desktop {
-            margin-left: 180px
+            margin-left: 180px;
+            font-size: 1vw;
         }
     }
 
@@ -75,7 +79,6 @@ body {
             padding: 24px 18px;
             margin-left: 50px;
             font-size: .85rem;
-    
         }
     }
 }
@@ -89,6 +92,9 @@ body {
     @include displaytool(space-between , center, none);
 }
 
+
+// hero elements live here
+
 .hero {
 
     &__pic {
@@ -98,10 +104,10 @@ body {
     background-color: $nav-bg;
 
     @include for-tablet {
-        height: 400px;
+        height: 60vw;
     }
     @include for-desktop {
-        height: 670px;
+        height: 60vw;
     }
     }
 
@@ -120,12 +126,15 @@ body {
             font-size: 3.5rem;
         }
         @include for-desktop {
-            top: 330px;
+            top: 450px;
             left:180px;
-            width: 40%;
+            width: 30vw;
         }
     }
 }
+
+
+// biography elements live here
 
 .biography {
     margin: 0px 16px;
@@ -174,7 +183,8 @@ body {
             margin-right: 24px;
         }
         @include for-desktop {
-            margin-right: 180px;
+            font-size: 1.5em;
+            margin-right: 9vw;
             padding-top: 48px;
             padding-bottom: 26px;
         }
@@ -225,8 +235,8 @@ body {
             font-size: .89em;
         }
         @include for-desktop{
-            font-size: .80em;
-            margin-right: 70px;
+            font-size: .89em;;
+            margin-right: 0vw;
         }
     }
 
@@ -238,17 +248,21 @@ body {
             font-size: .89em;
         }
         @include for-desktop{
-            font-size: .80em;
-            margin-right: 70px;
+            font-size: .89em;
+            padding-left: 1vw;
+            position: relative;
+            left: 40px;
+            margin-right: 1vw;
         }
     }
 }
 
+// photo gally lives here
+
+
 .photo__gallery {
     box-sizing: border-box;
-    @include for-desktop {
-        margin: 0 180px;
-    }
+    
     &__title {
         font-weight: 900;
         box-sizing: border-box;
@@ -263,7 +277,9 @@ body {
             padding-bottom: 40px;
         }
         @include for-desktop {
+            padding-left: 0px;
             padding-bottom: 64px;
+            margin-left: 180px;
         }
     }
 
@@ -276,9 +292,9 @@ body {
             flex-wrap: wrap;
         }
         @include for-desktop {
-            box-sizing: border-box;
             @include displaytool (center,center,row);
             flex-wrap: wrap;
+            margin-left: 1vw;
         }
     }   
 
@@ -286,18 +302,21 @@ body {
         box-sizing: border-box;
         @include min-sizetool (72px, auto);
         width: 100%;
-        padding: 16px;
+        margin: 7px;
 
         @include for-tablet {
-            @include max-sizetool (200px, auto);
-            padding: 24px;
+            width: 28vw;
+            margin: 12px;
         }
 
         @include for-desktop{
-            @include max-sizetool (272px, auto);
+            width: 25vw;
         }
     }
 }
+
+
+// footer content lives here
 
 footer {
     background-color: $nav-bg;
@@ -307,14 +326,33 @@ footer {
     width: 100%;
     color: $text-border-color;
     display: block;
+
     @include for-tablet {
         @include displaytool(flex-start, center, row);
         padding: 15px 0px;
     }
-    
+    @include for-desktop {
+        padding-left: 180px;
+    }
+
+    &__title {
+        font-size: 2.5em;
+        font-weight: bold;
+        padding-top: 50px;
+        padding-left: 12px;
+        @include for-tablet {
+            padding: 24px;
+            font-size: 2.4em;
+            color: $all-white;
+        }
+        @include for-desktop {
+            padding: 0;
+            font-size: em;
+        }
+    }
+
 
     &__logo {
-
 
         &--instagram {
             height: 28px;
@@ -325,6 +363,10 @@ footer {
                 position: relative;
                 left: 10px;
                 height: 25px;
+            }
+            @include for-desktop {
+                left: 89px;
+                height: 20px;
             }
         }
 
@@ -338,6 +380,10 @@ footer {
                 left: 35px;
                 height: 25px;
             }
+            @include for-desktop {
+                left: 110px;
+                height: 20px;
+            }
         }
 
         &--twitter {
@@ -350,19 +396,13 @@ footer {
                 left: 65px;
                 height: 25px;
             }
+            @include for-desktop {
+                left: 133px;
+                height: 20px;
+            }
         }
     }
-    &__title {
-        font-size: 2.5em;
-        font-weight: bold;
-        padding-top: 50px;
-        padding-left: 12px;
-        @include for-tablet {
-            padding: 24px;
-            font-size: 2.4em;
-            color: $all-white;
-        }
-    }
+    
     &__bandsite__logo {
         display: none;
         background-image: url(/assets/Logo/Logo-bandsite.svg);
@@ -377,6 +417,9 @@ footer {
             position: relative;
             left: 252px;
         }
+        @include for-desktop {
+            left: 50vw;
+        }
     }
 }
 
@@ -386,12 +429,21 @@ footer {
     background-color: $nav-bg;
     width: 100%;
 
+    @include for-desktop {
+        position: relative;
+        left: 174px;
+        padding-top: 35px;
+        font-size: 1.1em;
+    }
+
     &__section2 {
         @include for-tablet {
             position: relative;
             left: 30px;
         }
-        
+        @include for-desktop {
+            left: 79px;
+        }
     }
 
     &__section3 {
@@ -399,7 +451,9 @@ footer {
             position: relative;
             left: 75px;
         }
-        
+        @include for-desktop {
+            left: 180px;
+        }
     }
 
     &__text {
@@ -426,6 +480,9 @@ footer {
             @include displaytool( flex-start, center, row);
             padding-bottom: 35px;
             padding-top: 10px;
+        }
+        @include for-desktop {
+            padding-top: 40px;
         }
     }
 }
