@@ -39,16 +39,19 @@ body {
         
         @include for-tablet {
             margin-left: 24px;
-
+        }
+        @include for-desktop {
+            margin-left: 180px
         }
     }
 
     &__bar--left {
         @include displaytool (center, center, none);
         height: 25px;
-        width: 160px;  
+        width: 50vw;  
         color: $all-merc;
         border-bottom: 5px solid $all-white;
+
         @include for-tablet {
             @include displaytool (center,flex-end,none);
             width: 35px;
@@ -63,7 +66,7 @@ body {
     &__bar--right {
         @include displaytool (center, center, none);
         height: 25px;
-        width: 160px;  
+        width: 50vw;  
         color: $text-border-color;
         border-bottom: 0px solid $text-border-color;
         @include for-tablet {
@@ -72,6 +75,7 @@ body {
             padding: 24px 18px;
             margin-left: 50px;
             font-size: .85rem;
+    
         }
     }
 }
@@ -90,13 +94,14 @@ body {
     &__pic {
     position: relative;
     width: 100vw;
-    height: 32vh;
-    filter: opacity(60%);
+    height: auto;
     background-color: $nav-bg;
 
     @include for-tablet {
         height: 400px;
-
+    }
+    @include for-desktop {
+        height: 670px;
     }
     }
 
@@ -114,6 +119,11 @@ body {
             top: 220px;
             font-size: 3.5rem;
         }
+        @include for-desktop {
+            top: 330px;
+            left:180px;
+            width: 40%;
+        }
     }
 }
 
@@ -122,6 +132,9 @@ body {
 
     @include for-tablet{
         margin: 0px 24px
+    }
+    @include for-desktop{
+        margin: 0px 250px;
     }
 
     &__title {
@@ -134,13 +147,17 @@ body {
         @include for-tablet{
             font-size: 2.2rem;
         }
+        @include for-desktop {
+            margin: 0px -70px;
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
     }
 
     &__pic {
         width: 100%;
-
-        @include for-tablet {
-            width: 100%;
+        @include for-desktop{
+            @include min-sizetool(896px, 450px);
         }
     }
 
@@ -156,6 +173,11 @@ body {
             font-weight: 900;
             margin-right: 24px;
         }
+        @include for-desktop {
+            margin-right: 180px;
+            padding-top: 48px;
+            padding-bottom: 26px;
+        }
 
         &__credit {
             padding-bottom: 40px;
@@ -164,6 +186,9 @@ body {
 
             @include for-tablet {
                 font-size: .95em;
+            }
+            @include for-desktop {
+                padding-bottom: 56px;
             }
         }
     }
@@ -176,6 +201,9 @@ body {
         @include for-tablet {
             font-size: 1.6rem;
             font-weight: 900;
+        }
+        @include for-desktop{
+            padding-bottom: 32px;
         }
     }
 
@@ -196,6 +224,10 @@ body {
             line-height: 1.8;
             font-size: .89em;
         }
+        @include for-desktop{
+            font-size: .80em;
+            margin-right: 70px;
+        }
     }
 
     &__paragraph2 {
@@ -205,10 +237,18 @@ body {
             line-height: 1.8;
             font-size: .89em;
         }
+        @include for-desktop{
+            font-size: .80em;
+            margin-right: 70px;
+        }
     }
 }
 
 .photo__gallery {
+    box-sizing: border-box;
+    @include for-desktop {
+        margin: 0 180px;
+    }
     &__title {
         font-weight: 900;
         box-sizing: border-box;
@@ -222,27 +262,39 @@ body {
             font-size: 2rem;
             padding-bottom: 40px;
         }
-    }
-
-    &__all {
-        padding: 0 16px;
-        padding-bottom: 30px;
-        @include for-tablet {
-            box-sizing: content-box;
-            @include displaytool (flex-start,flex-start,row);
-            flex-wrap: wrap;
+        @include for-desktop {
+            padding-bottom: 64px;
         }
     }
 
+    &__all {
+        padding-bottom: 30px;
+        width: 100%;
+        @include for-tablet {
+            box-sizing: content-box;
+            @include displaytool (center,center,row);
+            flex-wrap: wrap;
+        }
+        @include for-desktop {
+            box-sizing: border-box;
+            @include displaytool (center,center,row);
+            flex-wrap: wrap;
+        }
+    }   
+
     &__item1, &__item2, &__item3, &__item4, &__item5, &__item6, &__item7, &__item8, &__item9 {
-        @include displaytool (center, center, row);
-        width: 288px;
-        padding-bottom: 16px;
+        box-sizing: border-box;
+        @include min-sizetool (72px, auto);
+        width: 100%;
+        padding: 16px;
 
         @include for-tablet {
-            width: 224px;
-            height: 126px;
-            padding: 10px;
+            @include max-sizetool (200px, auto);
+            padding: 24px;
+        }
+
+        @include for-desktop{
+            @include max-sizetool (272px, auto);
         }
     }
 }

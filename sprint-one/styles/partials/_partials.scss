@@ -1,8 +1,4 @@
 
-
-
-
-
 // color palette lives here 
 //global
 $primary-p-text: #323232;
@@ -27,13 +23,13 @@ $primary-cta: #323232;
 
 
 // viewscreen breakpoints live here
-$mobile-breakpoint: 288px;
+$mobile-breakpoint: 279px;
 $tablet-breakpoint: 720px;
-$desktop-breakpoint: 1800px;
+$desktop-breakpoint: 1400px;
 
 
 @mixin for-mobile {
-    @media (max-width: $mobile-breakpoint) {
+    @media (min-width: $mobile-breakpoint) {
         @content;
     }
 }
@@ -55,6 +51,16 @@ $desktop-breakpoint: 1800px;
     justify-content: $justify;
     align-items: $align;
     flex-direction: $direction;
+}
+
+@mixin min-sizetool($width, $height) {
+    min-width: $width;
+    min-height: $height;
+}
+
+@mixin max-sizetool($width, $height) {
+    max-width: $width;
+    max-height: $height;
 }
 
 @mixin gallerysizes {
