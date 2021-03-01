@@ -42,6 +42,11 @@ s p {
   line-height: 1.5;
 }
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   background-color: #FFFFFF;
   width: 100%;
@@ -157,25 +162,26 @@ body {
 }
 .hero__title {
   position: absolute;
-  top: 150px;
+  top: 40vw;
   left: 16px;
   color: #FFFFFF;
   font-weight: 900;
-  font-size: 1.7rem;
+  font-size: 8vw;
   width: 75%;
   height: 60px;
 }
 @media (min-width: 720px) {
   .hero__title {
-    top: 220px;
-    font-size: 3.5rem;
+    top: 30vw;
+    font-size: 8vw;
   }
 }
 @media (min-width: 1400px) {
   .hero__title {
-    top: 450px;
+    top: 30vw;
     left: 180px;
-    width: 30vw;
+    width: 50vw;
+    font-size: 5vw;
   }
 }
 
@@ -369,15 +375,15 @@ body {
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 1vw;
+    padding-left: 1vw;
   }
 }
 .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
   box-sizing: border-box;
+  filter: grayscale(100%);
   min-width: 72px;
   min-height: auto;
   width: 100%;
-  margin: 7px;
 }
 @media (min-width: 720px) {
   .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
@@ -390,15 +396,19 @@ body {
     width: 25vw;
   }
 }
+.photo__gallery__item1:hover, .photo__gallery__item2:hover, .photo__gallery__item3:hover, .photo__gallery__item4:hover, .photo__gallery__item5:hover, .photo__gallery__item6:hover, .photo__gallery__item7:hover, .photo__gallery__item8:hover, .photo__gallery__item9:hover {
+  filter: grayscale(0%);
+}
 
 footer {
   background-color: #323232;
+  width: 100%;
 }
 
 .social__media {
+  padding-top: 24px;
   width: 100%;
   color: #E1E1E1;
-  display: block;
 }
 @media (min-width: 720px) {
   .social__media {
@@ -406,12 +416,6 @@ footer {
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    padding: 15px 0px;
-  }
-}
-@media (min-width: 1400px) {
-  .social__media {
-    padding-left: 180px;
   }
 }
 .social__media__title {
@@ -422,72 +426,79 @@ footer {
 }
 @media (min-width: 720px) {
   .social__media__title {
-    padding: 24px;
-    font-size: 2.4em;
+    padding-top: 0px;
+    padding-left: 24px;
+    font-size: 2.2em;
     color: #FFFFFF;
   }
 }
 @media (min-width: 1400px) {
   .social__media__title {
-    padding: 0;
-    font-size: em;
+    padding-left: 180px;
+    font-size: 2.8em;
   }
 }
 .social__media__logo--instagram {
   height: 28px;
   width: 30px;
-  padding: 25px 12px;
+}
+@media (min-width: 279px) {
+  .social__media__logo--instagram {
+    padding: 25px 12px;
+  }
 }
 @media (min-width: 720px) {
   .social__media__logo--instagram {
-    padding: 0px;
-    position: relative;
-    left: 10px;
-    height: 25px;
+    width: 19px;
+    margin-left: 50px;
   }
 }
 @media (min-width: 1400px) {
   .social__media__logo--instagram {
-    left: 89px;
-    height: 20px;
+    width: 30px;
+    margin-left: 50px;
   }
 }
 .social__media__logo--facebook {
   height: 28px;
   width: 30px;
-  padding: 25px 12px;
+}
+@media (min-width: 279px) {
+  .social__media__logo--facebook {
+    padding: 25px 12px;
+  }
 }
 @media (min-width: 720px) {
   .social__media__logo--facebook {
-    padding: 0px;
-    position: relative;
-    left: 35px;
-    height: 25px;
+    width: 12px;
+    margin-left: 10px;
   }
 }
 @media (min-width: 1400px) {
   .social__media__logo--facebook {
-    left: 110px;
-    height: 20px;
+    width: 30px;
+    margin-left: 30px;
   }
 }
 .social__media__logo--twitter {
   height: 26px;
   width: 30px;
-  padding: 25px 12px;
+}
+@media (min-width: 279px) {
+  .social__media__logo--twitter {
+    padding: 25px 12px;
+  }
 }
 @media (min-width: 720px) {
   .social__media__logo--twitter {
-    padding: 0px;
-    position: relative;
-    left: 65px;
-    height: 25px;
+    width: 23px;
+    margin-left: 20px;
   }
 }
 @media (min-width: 1400px) {
   .social__media__logo--twitter {
-    left: 133px;
-    height: 20px;
+    width: 30px;
+    margin-left: 30px;
   }
 }
 .social__media__bandsite__logo {
@@ -496,20 +507,44 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: 75px;
+  width: 50px;
   height: auto;
 }
 @media (min-width: 720px) {
   .social__media__bandsite__logo {
     display: flex;
-    padding: 24px;
-    position: relative;
-    left: 252px;
+    width: 100px;
+    height: 60px;
+    margin-left: 200px;
   }
 }
 @media (min-width: 1400px) {
   .social__media__bandsite__logo {
-    left: 50vw;
+    margin-left: 33vw;
+    width: 130px;
+    height: 90px;
+  }
+}
+
+address {
+  font-style: normal;
+  padding-bottom: 0px;
+}
+@media (min-width: 720px) {
+  address {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1400px) {
+  address {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
   }
 }
 
@@ -520,32 +555,33 @@ footer {
 }
 @media (min-width: 1400px) {
   .contact {
-    position: relative;
-    left: 174px;
     padding-top: 35px;
     font-size: 1.1em;
   }
 }
 @media (min-width: 720px) {
-  .contact__section2 {
-    position: relative;
-    left: 30px;
+  .contact__section1 {
+    margin-left: 16px;
   }
 }
 @media (min-width: 1400px) {
+  .contact__section1 {
+    margin-left: 174px;
+  }
+}
+@media (min-width: 720px) {
   .contact__section2 {
-    left: 79px;
+    margin-left: 24px;
   }
 }
 @media (min-width: 720px) {
   .contact__section3 {
-    position: relative;
-    left: 75px;
+    margin-left: 24px;
   }
 }
 @media (min-width: 1400px) {
   .contact__section3 {
-    left: 180px;
+    margin-left: 80px;
   }
 }
 .contact__text {
@@ -566,6 +602,7 @@ footer {
   line-height: 1.5;
   font-size: 0.9em;
   padding-left: 12px;
+  padding-bottom: 40px;
 }
 @media (min-width: 720px) {
   .contact__copyright {
@@ -575,23 +612,16 @@ footer {
     flex-direction: row;
     padding-bottom: 35px;
     padding-top: 10px;
+    margin-left: 16px;
   }
 }
 @media (min-width: 1400px) {
   .contact__copyright {
-    padding-top: 40px;
-  }
-}
-
-address {
-  font-style: normal;
-  padding-bottom: 0px;
-}
-@media (min-width: 720px) {
-  address {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
+    padding-top: 40px;
+    margin-left: 174px;
   }
 }/*# sourceMappingURL=main.css.map */

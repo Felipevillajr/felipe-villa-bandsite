@@ -16,6 +16,10 @@ p {
     line-height: 1.5;
 }
 
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
 
 body {
     background-color: $all-white;
@@ -39,7 +43,6 @@ body {
     }
 
     &__title {
-        
         @include for-tablet {
             margin-left: 24px;
         }
@@ -113,22 +116,22 @@ body {
 
     &__title {
         position: absolute;
-        top: 150px;
+        top: 40vw;
         left: 16px;
         color: $all-white;
         font-weight: 900;
-        font-size: 1.7rem;
+        font-size: 8vw;
         width: 75%;
         height: 60px;
-
         @include for-tablet {
-            top: 220px;
-            font-size: 3.5rem;
+            top: 30vw;
+            font-size: 8vw;
         }
         @include for-desktop {
-            top: 450px;
+            top: 30vw;
             left:180px;
-            width: 30vw;
+            width: 50vw;
+            font-size: 5vw;
         }
     }
 }
@@ -294,15 +297,16 @@ body {
         @include for-desktop {
             @include displaytool (center,center,row);
             flex-wrap: wrap;
-            margin-left: 1vw;
+            padding-left: 1vw;
         }
     }   
 
     &__item1, &__item2, &__item3, &__item4, &__item5, &__item6, &__item7, &__item8, &__item9 {
         box-sizing: border-box;
+        filter: grayscale(100%);
         @include min-sizetool (72px, auto);
         width: 100%;
-        margin: 7px;
+
 
         @include for-tablet {
             width: 28vw;
@@ -313,6 +317,9 @@ body {
             width: 25vw;
         }
     }
+    &__item1:hover, &__item2:hover, &__item3:hover, &__item4:hover, &__item5:hover, &__item6:hover, &__item7:hover, &__item8:hover, &__item9:hover {
+        filter: grayscale(0%);
+    }
 }
 
 
@@ -320,20 +327,19 @@ body {
 
 footer {
     background-color: $nav-bg;
+    width: 100%;
 }
 
 .social__media {
+    padding-top: 24px;
     width: 100%;
     color: $text-border-color;
-    display: block;
 
     @include for-tablet {
-        @include displaytool(flex-start, center, row);
-        padding: 15px 0px;
+        @include displaytool(flex-start,center, row);
+
     }
-    @include for-desktop {
-        padding-left: 180px;
-    }
+    
 
     &__title {
         font-size: 2.5em;
@@ -341,13 +347,14 @@ footer {
         padding-top: 50px;
         padding-left: 12px;
         @include for-tablet {
-            padding: 24px;
-            font-size: 2.4em;
+            padding-top: 0px;
+            padding-left: 24px;
+            font-size: 2.2em;
             color: $all-white;
         }
         @include for-desktop {
-            padding: 0;
-            font-size: em;
+            padding-left: 180px;
+            font-size: 2.8em;
         }
     }
 
@@ -357,48 +364,50 @@ footer {
         &--instagram {
             height: 28px;
             width: 30px;
+            @include for-mobile {
             padding: 25px 12px;
+            }
             @include for-tablet {
-                padding: 0px;
-                position: relative;
-                left: 10px;
-                height: 25px;
+                width: 19px;
+                margin-left: 50px;
             }
             @include for-desktop {
-                left: 89px;
-                height: 20px;
+                width: 30px;
+                margin-left: 50px;
             }
         }
 
         &--facebook{
             height: 28px;
             width: 30px;
-            padding: 25px 12px;
+            @include for-mobile {
+                padding: 25px 12px;
+                }
             @include for-tablet {
-                padding: 0px;
-                position: relative;
-                left: 35px;
-                height: 25px;
+                width: 12px;
+                margin-left: 10px;
+
             }
             @include for-desktop {
-                left: 110px;
-                height: 20px;
+                width: 30px;
+                margin-left: 30px;
             }
         }
 
         &--twitter {
             height: 26px;
             width: 30px;
-            padding: 25px 12px;
+            @include for-mobile {
+                padding: 25px 12px;
+            }
             @include for-tablet {
-                padding: 0px;
-                position: relative;
-                left: 65px;
-                height: 25px;
+                width: 23px;
+                margin-left: 20px;
+                
             }
             @include for-desktop {
-                left: 133px;
-                height: 20px;
+                width: 30px;
+                margin-left: 30px;
             }
         }
     }
@@ -409,50 +418,63 @@ footer {
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        width: 75px;
+        width: 50px;
         height: auto;
         @include for-tablet {
             display: flex;
-            padding: 24px;
-            position: relative;
-            left: 252px;
+            width: 100px;
+            height: 60px;
+            margin-left: 200px;
         }
         @include for-desktop {
-            left: 50vw;
+            margin-left: 33vw;
+            width: 130px;
+            height: 90px;
         }
     }
 }
 
+address {
+    font-style: normal;
+    padding-bottom: 0px;
+    @include for-tablet {
+        @include displaytool(flex-start, center, row);
+    }
+    @include for-desktop {
+        @include displaytool(flex-start,center,row);
+        width: 100%;
+    }
+}
 
 .contact {
     padding-top: 16px;
     background-color: $nav-bg;
     width: 100%;
-
     @include for-desktop {
-        position: relative;
-        left: 174px;
         padding-top: 35px;
         font-size: 1.1em;
+        
     }
-
-    &__section2 {
+    &__section1 {
         @include for-tablet {
-            position: relative;
-            left: 30px;
+            margin-left: 16px;
         }
         @include for-desktop {
-            left: 79px;
+            margin-left: 174px;
+        }
+    }
+    &__section2 {
+        @include for-tablet {
+            margin-left: 24px;
         }
     }
 
     &__section3 {
         @include for-tablet {
-            position: relative;
-            left: 75px;
+            margin-left: 24px;
         }
         @include for-desktop {
-            left: 180px;
+            margin-left: 80px;
         }
     }
 
@@ -476,22 +498,20 @@ footer {
         line-height: 1.5;
         font-size: .9em;
         padding-left: 12px;
+        padding-bottom: 40px;
         @include for-tablet {
-            @include displaytool( flex-start, center, row);
+            @include displaytool(flex-start, center, row);
             padding-bottom: 35px;
             padding-top: 10px;
+            margin-left: 16px
         }
         @include for-desktop {
+            @include displaytool(flex-start,flex-start,row);
             padding-top: 40px;
+            margin-left: 174px;
         }
     }
 }
 
-address {
-    font-style: normal;
-    padding-bottom: 0px;
-    @include for-tablet {
-        @include displaytool(flex-start, center, row);
-    }
-}
+
 
