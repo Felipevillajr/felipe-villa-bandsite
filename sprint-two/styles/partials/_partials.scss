@@ -1,0 +1,106 @@
+
+// color palette lives here 
+//global
+$primary-p-text: #323232;
+$lable-text-color: #AFAFAF;
+$text-border-color: #E1E1E1;
+$field-text-bg: #FAFAFA;
+$all-white: #FFFFFF;
+$all-merc: #E1E1E1;
+//instock colors
+$nav-bg: #323232;
+$primary-cta-text-link: #004892;
+$primary-cta-hover: #002F5F;
+//BrainFlix
+$primary-cta-text-link2: #0095FF;
+$primary-cta-hover2: #0065AD;
+//BandSite 
+$primary-cta: #323232;
+
+
+// main font 
+
+
+
+// viewscreen breakpoints live here
+$mobile-breakpoint: 279px;
+$tablet-breakpoint: 720px;
+$desktop-breakpoint: 1400px;
+
+
+@mixin for-mobile {
+    @media (min-width: $mobile-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-tablet {
+    @media (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-desktop {
+    @media (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+@mixin displaytool($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin min-sizetool($width, $height) {
+    min-width: $width;
+    min-height: $height;
+}
+
+@mixin max-sizetool($width, $height) {
+    max-width: $width;
+    max-height: $height;
+}
+
+@mixin gallerysizes {
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('/assets/_Global_Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('/assets/_Global_Font/AvenirNextProLT/Linotype-AvenirNextLTPro-It.otf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('/assets/_Global_Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Demi.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('/assets/_Global_Font/AvenirNextProLT/Linotype-AvenirNextLTPro-BoldIt.otf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('/assets/_Global_Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Bold.otf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+$font-stack: 'Avenir';

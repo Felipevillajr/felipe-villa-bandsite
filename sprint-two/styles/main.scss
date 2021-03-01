@@ -1,0 +1,517 @@
+
+@use "./partials/partials" as *;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $font-stack;
+    text-decoration: none;
+}s
+
+p {
+    color: $primary-p-text;
+    font-size: .9rem;
+    padding: 0 2px;
+    line-height: 1.5;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-color: $all-white;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+// navigation bar lives here
+
+.navigation {
+    background-color: $nav-bg;
+    color: $lable-text-color;
+    height: 80px;
+    width: 100%;
+
+    @include for-tablet {
+        @include displaytool (flex-start, center, row);
+    }
+
+    &__title {
+        @include for-tablet {
+            margin-left: 24px;
+        }
+        @include for-desktop {
+            margin-left: 180px;
+            font-size: 1vw;
+        }
+    }
+
+    &__bar--left {
+        @include displaytool (center, center, none);
+        height: 25px;
+        width: 50vw;  
+        color: $all-merc;
+        border-bottom: 5px solid $all-white;
+
+        @include for-tablet {
+            @include displaytool (center,flex-end,none);
+            width: 35px;
+            border-bottom: 5px solid $all-white;
+            padding: 24px 25px;
+            margin-left: 50px;
+            color: $all-white;
+            font-size: .85rem;
+        }
+    }   
+
+    &__bar--right {
+        @include displaytool (center, center, none);
+        height: 25px;
+        width: 50vw;  
+        color: $text-border-color;
+        border-bottom: 0px solid $text-border-color;
+        @include for-tablet {
+            @include displaytool (center,flex-end,none);
+            width: 45px;
+            padding: 24px 18px;
+            margin-left: 50px;
+            font-size: .85rem;
+        }
+    }
+}
+
+.navigation__title {
+    @include displaytool (center, center, column);
+    padding: 16px 0px;
+}
+.navigation__bar {
+    color: $lable-text-color;
+    @include displaytool(space-between , center, none);
+}
+
+
+// hero elements live here
+
+.hero {
+
+    &__pic {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    background-color: $nav-bg;
+
+    @include for-tablet {
+        height: 60vw;
+    }
+    @include for-desktop {
+        height: 60vw;
+    }
+    }
+
+    &__title {
+        position: absolute;
+        top: 40vw;
+        left: 16px;
+        color: $all-white;
+        font-weight: 900;
+        font-size: 8vw;
+        width: 75%;
+        height: 60px;
+        @include for-tablet {
+            top: 30vw;
+            font-size: 8vw;
+        }
+        @include for-desktop {
+            top: 30vw;
+            left:180px;
+            width: 50vw;
+            font-size: 5vw;
+        }
+    }
+}
+
+
+// biography elements live here
+
+.biography {
+    margin: 0px 16px;
+
+    @include for-tablet{
+        margin: 0px 24px
+    }
+    @include for-desktop{
+        margin: 0px 250px;
+    }
+
+    &__title {
+        font-weight: 900;
+        padding-top: 32px;
+        padding-bottom: 24px;
+        font-size: 1.7rem;
+        color: $primary-p-text;
+
+        @include for-tablet{
+            font-size: 2.2rem;
+        }
+        @include for-desktop {
+            margin: 0px -70px;
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+    }
+
+    &__pic {
+        width: 100%;
+        @include for-desktop{
+            @include min-sizetool(896px, 450px);
+        }
+    }
+
+    &__quote {
+        padding-top: 24px;
+        padding-bottom: 10px;
+        font-size: 1.15rem;
+        color: $primary-p-text;
+        line-height: 1.6;
+
+        @include for-tablet {
+            font-size: 1.48rem;
+            font-weight: 900;
+            margin-right: 24px;
+        }
+        @include for-desktop {
+            font-size: 1.5em;
+            margin-right: 9vw;
+            padding-top: 48px;
+            padding-bottom: 26px;
+        }
+
+        &__credit {
+            padding-bottom: 40px;
+            font-size: 1.15rem;
+            color: $primary-p-text;
+
+            @include for-tablet {
+                font-size: .95em;
+            }
+            @include for-desktop {
+                padding-bottom: 56px;
+            }
+        }
+    }
+
+    &__subtitle {
+        padding-bottom: 24px;
+        font-size: 1.15rem;
+        color: $primary-p-text;
+
+        @include for-tablet {
+            font-size: 1.6rem;
+            font-weight: 900;
+        }
+        @include for-desktop{
+            padding-bottom: 32px;
+        }
+    }
+
+    &__body {
+        color: $primary-p-text;
+
+        @include for-tablet{
+            @include displaytool(center, center, row); 
+            
+        }
+    }
+
+    &__paragraph {
+        font-size: .85em;
+        
+        @include for-tablet {
+            margin-right: 24px;
+            line-height: 1.8;
+            font-size: .89em;
+        }
+        @include for-desktop{
+            font-size: .89em;;
+            margin-right: 0vw;
+        }
+    }
+
+    &__paragraph2 {
+        font-size: .85em;
+
+        @include for-tablet {
+            line-height: 1.8;
+            font-size: .89em;
+        }
+        @include for-desktop{
+            font-size: .89em;
+            padding-left: 1vw;
+            position: relative;
+            left: 40px;
+            margin-right: 1vw;
+        }
+    }
+}
+
+// photo gally lives here
+
+
+.photo__gallery {
+    box-sizing: border-box;
+    
+    &__title {
+        font-weight: 900;
+        box-sizing: border-box;
+        @include displaytool (flex-start, flex-start, row);
+        padding-top: 72px;
+        padding-bottom: 24px;
+        font-size: 1.8rem;
+        color: $primary-p-text;
+        padding-left: 24px;
+        @include for-tablet {
+            font-size: 2rem;
+            padding-bottom: 40px;
+        }
+        @include for-desktop {
+            padding-left: 0px;
+            padding-bottom: 64px;
+            margin-left: 180px;
+        }
+    }
+
+    &__all {
+        padding-bottom: 30px;
+        width: 100%;
+        @include for-tablet {
+            box-sizing: content-box;
+            @include displaytool (center,center,row);
+            flex-wrap: wrap;
+        }
+        @include for-desktop {
+            @include displaytool (center,center,row);
+            flex-wrap: wrap;
+            padding-left: 1vw;
+        }
+    }   
+
+    &__item1, &__item2, &__item3, &__item4, &__item5, &__item6, &__item7, &__item8, &__item9 {
+        box-sizing: border-box;
+        filter: grayscale(100%);
+        @include min-sizetool (72px, auto);
+        width: 100%;
+
+
+        @include for-tablet {
+            width: 28vw;
+            margin: 12px;
+        }
+
+        @include for-desktop{
+            width: 25vw;
+        }
+    }
+    &__item1:hover, &__item2:hover, &__item3:hover, &__item4:hover, &__item5:hover, &__item6:hover, &__item7:hover, &__item8:hover, &__item9:hover {
+        filter: grayscale(0%);
+    }
+}
+
+
+// footer content lives here
+
+footer {
+    background-color: $nav-bg;
+    width: 100%;
+}
+
+.social__media {
+    padding-top: 24px;
+    width: 100%;
+    color: $text-border-color;
+
+    @include for-tablet {
+        @include displaytool(flex-start,center, row);
+
+    }
+    
+
+    &__title {
+        font-size: 2.5em;
+        font-weight: bold;
+        padding-top: 50px;
+        padding-left: 12px;
+        @include for-tablet {
+            padding-top: 0px;
+            padding-left: 24px;
+            font-size: 1.9em;
+            color: $all-white;
+        }
+        @include for-desktop {
+            padding-left: 180px;
+            font-size: 2.8em;
+        }
+    }
+
+
+    &__logo {
+
+        &--instagram {
+            height: 28px;
+            width: 30px;
+            @include for-mobile {
+            padding: 25px 12px;
+            }
+            @include for-tablet {
+                width: 19px;
+                margin-left: 50px;
+            }
+            @include for-desktop {
+                width: 30px;
+                margin-left: 50px;
+            }
+        }
+
+        &--facebook{
+            height: 28px;
+            width: 30px;
+            @include for-mobile {
+                padding: 25px 12px;
+                }
+            @include for-tablet {
+                width: 12px;
+                margin-left: 10px;
+
+            }
+            @include for-desktop {
+                width: 30px;
+                margin-left: 30px;
+            }
+        }
+
+        &--twitter {
+            height: 26px;
+            width: 30px;
+            @include for-mobile {
+                padding: 25px 12px;
+            }
+            @include for-tablet {
+                width: 23px;
+                margin-left: 20px;
+                
+            }
+            @include for-desktop {
+                width: 30px;
+                margin-left: 30px;
+            }
+        }
+    }
+    
+    &__bandsite__logo {
+        display: none;
+        background-image: url(/assets/Logo/Logo-bandsite.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 50px;
+        height: auto;
+        @include for-tablet {
+            display: flex;
+            width: 100px;
+            height: 60px;
+            margin-left: 200px;
+        }
+        @include for-desktop {
+            margin-left: 33vw;
+            width: 130px;
+            height: 90px;
+        }
+    }
+}
+
+address {
+    font-style: normal;
+    padding-bottom: 0px;
+    @include for-tablet {
+        @include displaytool(flex-start, center, row);
+    }
+    @include for-desktop {
+        @include displaytool(flex-start,center,row);
+        width: 100%;
+    }
+}
+
+.contact {
+    padding-top: 16px;
+    background-color: $nav-bg;
+    width: 100%;
+    @include for-desktop {
+        padding-top: 35px;
+        font-size: 1.1em;
+        
+    }
+    &__section1 {
+        @include for-tablet {
+            margin-left: 16px;
+        }
+        @include for-desktop {
+            margin-left: 174px;
+        }
+    }
+    &__section2 {
+        @include for-tablet {
+            margin-left: 24px;
+        }
+    }
+
+    &__section3 {
+        @include for-tablet {
+            margin-left: 24px;
+        }
+        @include for-desktop {
+            margin-left: 80px;
+        }
+    }
+
+    &__text {
+        color: $text-border-color;
+        font-weight: bold;
+        line-height: 1.5em;
+        font-size: 1em;
+        padding-left: 12px;
+
+        &__secondary {
+            color: $lable-text-color;
+            line-height: 1.5;
+            font-size: .9em;
+            padding-left: 12px;
+        }
+    }
+
+    &__copyright {
+        color: $lable-text-color;
+        line-height: 1.5;
+        font-size: .9em;
+        padding-left: 12px;
+        padding-bottom: 40px;
+        @include for-tablet {
+            @include displaytool(flex-start, center, row);
+            padding-bottom: 35px;
+            padding-top: 10px;
+            margin-left: 16px
+        }
+        @include for-desktop {
+            @include displaytool(flex-start,flex-start,row);
+            padding-top: 40px;
+            margin-left: 174px;
+        }
+    }
+}
+
+
+
