@@ -53,6 +53,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .navigation {
@@ -81,6 +82,11 @@ body {
     font-size: 1vw;
   }
 }
+.navigation__logo {
+  width: 98%;
+  position: relative;
+  right: 0px;
+}
 .navigation__bar--left {
   display: flex;
   justify-content: center;
@@ -89,7 +95,7 @@ body {
   height: 25px;
   width: 50vw;
   color: #E1E1E1;
-  border-bottom: 5px solid #FFFFFF;
+  border-bottom: 0px solid #E1E1E1;
 }
 @media (min-width: 720px) {
   .navigation__bar--left {
@@ -98,10 +104,10 @@ body {
     align-items: flex-end;
     flex-direction: none;
     width: 35px;
-    border-bottom: 5px solid #FFFFFF;
+    border-bottom: 0px solid #E1E1E1;
     padding: 24px 25px;
     margin-left: 50px;
-    color: #FFFFFF;
+    color: #E1E1E1;
     font-size: 0.85rem;
   }
 }
@@ -112,8 +118,8 @@ body {
   flex-direction: none;
   height: 25px;
   width: 50vw;
-  color: #E1E1E1;
-  border-bottom: 0px solid #E1E1E1;
+  color: #FFFFFF;
+  border-bottom: 5px solid #FFFFFF;
 }
 @media (min-width: 720px) {
   .navigation__bar--right {
@@ -144,18 +150,24 @@ body {
   flex-direction: none;
 }
 
-.hero {
-  position: relative;
+@media (min-width: 279px) {
+  .hero {
+    height: 472px;
+  }
 }
 .hero__pic {
   position: relative;
-  width: 100%;
-  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100vw;
+  height: 472px;
   background-color: #323232;
+  overflow: hidden;
 }
 @media (min-width: 720px) {
   .hero__pic {
     height: 60vw;
+    height: 670px;
   }
 }
 @media (min-width: 1400px) {
@@ -163,20 +175,36 @@ body {
     height: 60vw;
   }
 }
+.hero__tour__title {
+  position: relative;
+  color: #FFFFFF;
+  bottom: 126vw;
+  padding-left: 16px;
+  font-size: 1em;
+}
+@media (min-width: 720px) {
+  .hero__tour__title {
+    bottom: 48vw;
+    font-size: 3.5vw;
+    padding-left: 24px;
+  }
+}
 .hero__title {
   position: absolute;
-  top: 50vw;
+  top: 60vw;
   left: 16px;
   color: #FFFFFF;
   font-weight: 900;
-  font-size: 8vw;
-  width: 75%;
+  font-size: 11.25vw;
+  width: 88%;
   height: 60px;
 }
 @media (min-width: 720px) {
   .hero__title {
-    top: 30vw;
+    top: 32vw;
     font-size: 8vw;
+    width: 80%;
+    padding-left: 10px;
   }
 }
 @media (min-width: 1400px) {
@@ -187,377 +215,159 @@ body {
     font-size: 5vw;
   }
 }
-
-.biography {
-  margin: 0px 16px;
-}
-@media (min-width: 720px) {
-  .biography {
-    margin: 0px 24px;
-  }
-}
-@media (min-width: 1400px) {
-  .biography {
-    margin: 0px 250px;
-  }
-}
-.biography__title {
-  font-weight: 900;
-  padding-top: 32px;
-  padding-bottom: 24px;
-  font-size: 1.7rem;
-  color: #323232;
-}
-@media (min-width: 720px) {
-  .biography__title {
-    font-size: 2.2rem;
-  }
-}
-@media (min-width: 1400px) {
-  .biography__title {
-    margin: 0px -70px;
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-}
-.biography__pic {
-  width: 100%;
-}
-@media (min-width: 1400px) {
-  .biography__pic {
-    min-width: 896px;
-    min-height: 450px;
-  }
-}
-.biography__quote {
-  padding-top: 24px;
-  padding-bottom: 10px;
-  font-size: 1.15rem;
-  color: #323232;
-  line-height: 1.6;
-}
-@media (min-width: 720px) {
-  .biography__quote {
-    font-size: 1.48rem;
-    font-weight: 900;
-    margin-right: 24px;
-  }
-}
-@media (min-width: 1400px) {
-  .biography__quote {
-    font-size: 1.5em;
-    margin-right: 9vw;
-    padding-top: 48px;
-    padding-bottom: 26px;
-  }
-}
-.biography__quote__credit {
-  padding-bottom: 40px;
-  font-size: 1.15rem;
-  color: #323232;
-}
-@media (min-width: 720px) {
-  .biography__quote__credit {
-    font-size: 0.95em;
-  }
-}
-@media (min-width: 1400px) {
-  .biography__quote__credit {
-    padding-bottom: 56px;
-  }
-}
-.biography__subtitle {
-  padding-bottom: 24px;
-  font-size: 1.15rem;
-  color: #323232;
-}
-@media (min-width: 720px) {
-  .biography__subtitle {
-    font-size: 1.6rem;
-    font-weight: 900;
-  }
-}
-@media (min-width: 1400px) {
-  .biography__subtitle {
-    padding-bottom: 32px;
-  }
-}
-.biography__body {
-  color: #323232;
-}
-@media (min-width: 720px) {
-  .biography__body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-}
-.biography__paragraph {
-  font-size: 0.85em;
-}
-@media (min-width: 720px) {
-  .biography__paragraph {
-    margin-right: 24px;
-    line-height: 1.8;
-    font-size: 0.89em;
-  }
-}
-@media (min-width: 1400px) {
-  .biography__paragraph {
-    font-size: 0.89em;
-    margin-right: 0vw;
-  }
-}
-.biography__paragraph2 {
-  font-size: 0.85em;
-}
-@media (min-width: 720px) {
-  .biography__paragraph2 {
-    line-height: 1.8;
-    font-size: 0.89em;
-  }
-}
-@media (min-width: 1400px) {
-  .biography__paragraph2 {
-    font-size: 0.89em;
-    padding-left: 1vw;
-    position: relative;
-    left: 40px;
-    margin-right: 1vw;
-  }
-}
-
-.photo__gallery {
-  box-sizing: border-box;
-  background-color: #FAFAFA;
-}
-.photo__gallery__title {
-  font-weight: 900;
-  box-sizing: border-box;
+.hero__iframe {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
-  padding-top: 72px;
-  padding-bottom: 24px;
-  font-size: 1.8rem;
-  color: #323232;
-  padding-left: 24px;
+  position: relative;
+  width: 90%;
+  height: 110px;
+  padding-left: 16px;
+  bottom: 50vw;
+  border-radius: 7%;
 }
 @media (min-width: 720px) {
-  .photo__gallery__title {
-    font-size: 2rem;
-    padding-bottom: 40px;
+  .hero__iframe {
+    bottom: 30vw;
+    width: 60%;
+    height: 145px;
+    padding-left: 24px;
   }
 }
-@media (min-width: 1400px) {
-  .photo__gallery__title {
-    padding-left: 0px;
-    padding-bottom: 64px;
-    margin-left: 180px;
-  }
-}
-.photo__gallery__all {
-  padding-bottom: 30px;
-  width: 100%;
-}
-@media (min-width: 720px) {
-  .photo__gallery__all {
-    box-sizing: content-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-@media (min-width: 1400px) {
-  .photo__gallery__all {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-left: 1vw;
-  }
-}
-.photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
-  box-sizing: border-box;
-  filter: grayscale(100%);
-  padding: 0 16px;
-  width: 100%;
-}
-@media (min-width: 720px) {
-  .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
-    width: 28vw;
-    margin: 12px;
-  }
-}
-@media (min-width: 1400px) {
-  .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
-    width: 25vw;
-  }
-}
-.photo__gallery__item1:hover, .photo__gallery__item2:hover, .photo__gallery__item3:hover, .photo__gallery__item4:hover, .photo__gallery__item5:hover, .photo__gallery__item6:hover, .photo__gallery__item7:hover, .photo__gallery__item8:hover, .photo__gallery__item9:hover {
-  filter: grayscale(0%);
+.hero__musicplayer {
+  font-size: 10px;
+  color: #cccccc;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: "Avenir";
+  font-weight: normal;
 }
 
-.comment__section--title {
-  font-size: 1.5em;
-  font-weight: 900;
+.shows__list__title {
   padding-top: 32px;
-  padding-bottom: 0px;
+  padding-bottom: 40px;
   margin-left: 16px;
+  font-size: 2em;
+  font-weight: 900;
 }
-
-.comment--form__fieldset {
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+@media (min-width: 720px) {
+  .shows__list__title {
+    margin-top: 200px;
+    margin-left: 24px;
+  }
 }
-
-#comment {
-  padding-top: 32px;
+@media (min-width: 1400px) {
+  .shows__list__title {
+    padding-top: 40px;
+    margin-left: 180px;
+    font-size: 3vw;
+    font-weight: 900;
+  }
 }
-
-#comment--form__img {
-  background-image: url(/assets/Images/Mohan-muruge.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+.shows__list__info__titles {
+  display: none;
+}
+@media (min-width: 720px) {
+  .shows__list__info__titles {
+    width: 55%;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 24px;
+    margin-bottom: 30px;
+    color: #cecdcd;
+  }
+}
+.shows__list__info__titles--venue {
   position: relative;
-  top: 60px;
-  right: 120px;
-  height: 48px;
-  width: 48px;
-  border-radius: 50%;
+  left: 40px;
+}
+.shows__list__info__titles--location {
+  position: relative;
+  left: 40px;
 }
 
-#name, #comment {
-  width: 163px;
-  color: #AFAFAF;
-  text-align: left;
-  font-size: 0.8em;
-  padding-bottom: 2px;
+#shows__section {
+  border-bottom: 2px solid #E1E1E1;
+  width: 80%;
+  margin-left: 16px;
+  margin-bottom: 30px;
+}
+@media (min-width: 720px) {
+  #shows__section {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 736px;
+    overflow: hidden;
+    margin-left: 24px;
+  }
+}
+
+#shows__date, #shows__venue, #shows__location {
   font-weight: bold;
-  letter-spacing: 1px;
+  color: #cecdcd;
 }
 
-input[name], #textarea {
-  border-radius: 5%;
-  border: 2px solid #E1E1E1;
-  position: relative;
-  left: 29px;
-  width: 200px;
-  padding: 10px;
-  color: #323232;
-  resize: none;
+@media (min-width: 720px) {
+  #shows__date, #shows__venue, #shows__location {
+    display: none;
+  }
 }
 
-input[name]:focus, #textarea:focus {
-  outline: #323232;
-  border-radius: 5%;
-  border: 2px solid #323232;
-  position: relative;
-  width: 200px;
-  padding: 10px;
-  color: #323232;
-}
-
-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  left: 10vw;
-  background-color: #323232;
-  color: #FFFFFF;
-  width: 224px;
+input {
+  margin-bottom: 16px;
+  width: 270px;
   height: 50px;
-  border-radius: 4%;
-  margin-right: 16px;
+  background-color: #323232;
   font-size: 1em;
-  border: 2px solid #323232;
+  border-radius: 8px;
+  color: #FFFFFF;
   border-collapse: separate;
   overflow: hidden;
   perspective: 1px;
 }
+@media (min-width: 720px) {
+  input {
+    width: 160px;
+    padding-top: 5px;
+    margin-right: 24px;
+  }
+}
 
-button:hover {
+input:hover {
   background-color: black;
 }
 
-.comment__section--button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 16px;
-  padding-bottom: 32px;
-}
-
-button:focus {
+input:focus {
   outline: black;
 }
 
-#comment__submission {
-  width: 100%;
-}
-
-#comment__section {
-  height: 160px;
-  border-top: 1px solid #E1E1E1;
-  border-bottom: 1px solid #E1E1E1;
+#venue, #location {
+  padding-top: 16px;
   padding-bottom: 24px;
-  width: 90%;
-  margin-left: 16px;
-  font-size: 0.8em;
 }
-
-#userimg {
-  position: relative;
-  top: 45px;
-  background-color: #E1E1E1;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-}
-
-#username {
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
-  width: 120px;
-  left: 60px;
-  bottom: 36px;
-  padding-top: 20px;
-  padding-bottom: 16px;
+#date {
   font-weight: bold;
-}
-
-#user__comment {
-  position: relative;
-  bottom: 40px;
-  left: 60px;
-  width: 75%;
-}
-
-#timestamp {
-  color: #AFAFAF;
-  display: flex;
-  justify-content: flex-end;
-  top: 36px;
+  padding-top: 16px;
+  padding-bottom: 24px;
 }
 
 footer {
   background-color: #323232;
   width: 100%;
-  margin-top: 30px;
 }
 
 .social__media {
+  padding-top: 24px;
   width: 100%;
   color: #E1E1E1;
 }
@@ -775,4 +585,4 @@ address {
     padding-top: 40px;
     margin-left: 174px;
   }
-}/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=shows.css.map */

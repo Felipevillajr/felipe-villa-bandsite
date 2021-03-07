@@ -27,6 +27,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; 
 }
 
 // navigation bar lives here
@@ -52,20 +53,26 @@ body {
         }
     }
 
+    &__logo {
+        width: 98%;
+        position: relative;
+        right: 0px;
+    }
+
     &__bar--left {
         @include displaytool (center, center, none);
         height: 25px;
         width: 50vw;  
-        color: $all-merc;
-        border-bottom: 5px solid $all-white;
+        color: $text-border-color;
+        border-bottom: 0px solid $text-border-color;
 
         @include for-tablet {
             @include displaytool (center,flex-end,none);
             width: 35px;
-            border-bottom: 5px solid $all-white;
+            border-bottom: 0px solid $text-border-color;
             padding: 24px 25px;
             margin-left: 50px;
-            color: $all-white;
+            color: $text-border-color;
             font-size: .85rem;
         }
     }   
@@ -74,8 +81,8 @@ body {
         @include displaytool (center, center, none);
         height: 25px;
         width: 50vw;  
-        color: $text-border-color;
-        border-bottom: 0px solid $text-border-color;
+        color: $all-white;
+        border-bottom: 5px solid $all-white;
         @include for-tablet {
             @include displaytool (center,flex-end,none);
             width: 45px;
@@ -99,36 +106,53 @@ body {
 // hero elements live here
 
 .hero {
-    position: relative;
-
-
+    @include for-mobile {
+        height: 472px;
+    }
     &__pic {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background-color: $nav-bg;
-    
+        position: relative;
+        object-fit: cover;
+        width: 100vw;
+        height: 472px;
+        background-color: $nav-bg;
+        overflow: hidden;
 
     @include for-tablet {
         height: 60vw;
+        height: 670px;
     }
     @include for-desktop {
         height: 60vw;
     }
     }
 
+    &__tour__title {
+        position: relative;
+        color: $all-white;
+        bottom: 126vw;
+        padding-left: 16px;
+        font-size: 1em;
+        @include for-tablet {
+            bottom: 48vw;
+            font-size: 3.5vw;
+            padding-left: 24px;
+        }
+    }
+
     &__title {
         position: absolute;
-        top: 50vw;
+        top: 60vw;
         left: 16px;
         color: $all-white;
         font-weight: 900;
-        font-size: 8vw;
-        width: 75%;
+        font-size: 11.25vw;
+        width: 88%;
         height: 60px;
         @include for-tablet {
-            top: 30vw;
+            top: 32vw;
             font-size: 8vw;
+            width: 80%;
+            padding-left: 10px;
         }
         @include for-desktop {
             top: 30vw;
@@ -137,342 +161,142 @@ body {
             font-size: 5vw;
         }
     }
+    &__iframe {
+        @include displaytool (center, center, row);
+        position: relative;
+        width: 90%; 
+        height: 110px;
+        padding-left: 16px;
+        bottom: 50vw;
+        border-radius: 7%;
+        @include for-tablet {
+            bottom: 30vw;
+            width: 60%;
+            height: 145px;
+            padding-left: 24px;
+        }
+    }
+    &__musicplayer {
+        font-size: 10px; 
+        color: #cccccc;
+        line-break: anywhere;
+        word-break: normal;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; 
+        font-family: $font-stack ;
+        font-weight: normal;
+    }
 }
 
+// shows list lives here 
 
-// biography elements live here
-
-.biography {
-    margin: 0px 16px;
-
-    @include for-tablet{
-        margin: 0px 24px
-    }
-    @include for-desktop{
-        margin: 0px 250px;
-    }
+.shows__list {
 
     &__title {
-        font-weight: 900;
         padding-top: 32px;
-        padding-bottom: 24px;
-        font-size: 1.7rem;
-        color: $primary-p-text;
-
-        @include for-tablet{
-            font-size: 2.2rem;
+        padding-bottom: 40px;
+        margin-left: 16px;
+        font-size: 2em;
+        font-weight: 900;
+        @include for-tablet {
+            margin-top: 200px;
+            margin-left: 24px;
         }
         @include for-desktop {
-            margin: 0px -70px;
-            padding-top: 48px;
-            padding-bottom: 48px;
-        }
-    }
-
-    &__pic {
-        width: 100%;
-        @include for-desktop{
-            @include min-sizetool(896px, 450px);
-        }
-    }
-
-    &__quote {
-        padding-top: 24px;
-        padding-bottom: 10px;
-        font-size: 1.15rem;
-        color: $primary-p-text;
-        line-height: 1.6;
-
-        @include for-tablet {
-            font-size: 1.48rem;
-            font-weight: 900;
-            margin-right: 24px;
-        }
-        @include for-desktop {
-            font-size: 1.5em;
-            margin-right: 9vw;
-            padding-top: 48px;
-            padding-bottom: 26px;
-        }
-
-        &__credit {
-            padding-bottom: 40px;
-            font-size: 1.15rem;
-            color: $primary-p-text;
-
-            @include for-tablet {
-                font-size: .95em;
-            }
-            @include for-desktop {
-                padding-bottom: 56px;
-            }
-        }
-    }
-
-    &__subtitle {
-        padding-bottom: 24px;
-        font-size: 1.15rem;
-        color: $primary-p-text;
-
-        @include for-tablet {
-            font-size: 1.6rem;
+            padding-top: 40px;
+            margin-left: 180px;
+            font-size: 3vw;
             font-weight: 900;
         }
-        @include for-desktop{
-            padding-bottom: 32px;
-        }
-    }
-
-    &__body {
-        color: $primary-p-text;
-
-        @include for-tablet{
-            @include displaytool(center, center, row); 
-            
-        }
-    }
-
-    &__paragraph {
-        font-size: .85em;
         
-        @include for-tablet {
-            margin-right: 24px;
-            line-height: 1.8;
-            font-size: .89em;
-        }
-        @include for-desktop{
-            font-size: .89em;;
-            margin-right: 0vw;
-        }
     }
-
-    &__paragraph2 {
-        font-size: .85em;
-
+    &__info__titles {
+        display: none;
         @include for-tablet {
-            line-height: 1.8;
-            font-size: .89em;
+            width: 55%;
+            text-align: right;
+            @include displaytool(space-between, center, row);
+            margin-left: 24px;
+            margin-bottom: 30px;
+            color: #cecdcd;
         }
-        @include for-desktop{
-            font-size: .89em;
-            padding-left: 1vw;
+        &--venue {
             position: relative;
             left: 40px;
-            margin-right: 1vw;
+        }
+        &--location {
+            position: relative;
+            left: 40px;
         }
     }
+
 }
 
-// photo gallery lives here
-
-
-.photo__gallery {
-    box-sizing: border-box;
-    background-color: $field-text-bg;
-    
-    &__title {
-        font-weight: 900;
+#shows__section {
+    border-bottom: 2px solid $all-merc;
+    width: 80%;
+    margin-left: 16px;
+    margin-bottom: 30px;
+    @include for-tablet {
         box-sizing: border-box;
-        @include displaytool (flex-start, flex-start, row);
-        padding-top: 72px;
-        padding-bottom: 24px;
-        font-size: 1.8rem;
-        color: $primary-p-text;
-        padding-left: 24px;
-        @include for-tablet {
-            font-size: 2rem;
-            padding-bottom: 40px;
-        }
-        @include for-desktop {
-            padding-left: 0px;
-            padding-bottom: 64px;
-            margin-left: 180px;
-        }
-    }
-
-    &__all {
-        padding-bottom: 30px;
-        width: 100%;
-        @include for-mobile {
-        }
-        @include for-tablet {
-            box-sizing: content-box;
-            @include displaytool (center,center,row);
-            flex-wrap: wrap;
-        }
-        @include for-desktop {
-            @include displaytool (center,center,row);
-            flex-wrap: wrap;
-            padding-left: 1vw;
-        }
-    }   
-
-    &__item1, &__item2, &__item3, &__item4, &__item5, &__item6, &__item7, &__item8, &__item9 {
-        box-sizing: border-box;
-        filter: grayscale(100%);
-        padding: 0 16px;
-        width: 100%;
+        @include displaytool(space-between, center, row);
+        width: 736px;
+        overflow: hidden;
+        margin-left: 24px;
         
-        @include for-tablet {
-            width: 28vw;
-            margin: 12px;
-        }
-
-        @include for-desktop{
-            width: 25vw;
-        }
-    }
-    &__item1:hover, &__item2:hover, &__item3:hover, &__item4:hover, &__item5:hover, &__item6:hover, &__item7:hover, &__item8:hover, &__item9:hover {
-        filter: grayscale(0%);
     }
 }
 
-// comment section styling lives here
-
-.comment__section--title {
-font-size: 1.5em;
-font-weight: 900;
-padding-top: 32px;
-padding-bottom: 0px;
-margin-left: 16px;
-}
-
-.comment--form__fieldset {
-    border: none;
-    @include displaytool(center,center,column);
-}
-
-#comment {
-    padding-top: 32px;
-}
-
-#comment--form__img {
-    background-image: url(/assets/Images/Mohan-muruge.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    top: 60px;
-    right: 120px;
-    height: 48px;
-    width: 48px;
-    border-radius: 50%;
-}
-
-
-#name, #comment {
-    width: 163px;
-    color: $lable-text-color;
-    text-align: left;
-    font-size: .8em;
-    padding-bottom: 2px;
+#shows__date, #shows__venue, #shows__location {
     font-weight: bold;
-    letter-spacing: 1px;
+    color: #cecdcd;
+    
 }
 
-
-input[name], #textarea {
-    border-radius: 5%;
-    border: 2px solid $all-merc;
-    position: relative;
-    left: 29px;
-    width: 200px;
-    padding: 10px;
-    color: $primary-p-text;
-    resize: none;
+#shows__date, #shows__venue, #shows__location {
+    @include for-tablet {
+        display: none;
+    }
 }
 
-input[name]:focus , #textarea:focus {
-    outline: $primary-p-text;
-    border-radius: 5%;
-    border: 2px solid $primary-p-text;
-    position: relative;
-    width: 200px;
-    padding: 10px;
-    color: $primary-p-text;
-}
-
-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    left: 10vw;
-    background-color: $primary-p-text;
-    color: $all-white;
-    width: 224px;
+input {
+    margin-bottom: 16px;
+    width: 270px;
     height: 50px;
-    border-radius: 4%;
-    margin-right: 16px;
+    background-color: $primary-p-text;
     font-size: 1em;
-    border: 2px solid $primary-p-text;
+    border-radius: 8px;
+    color: $all-white;
     border-collapse: separate;
     overflow: hidden;
     perspective: 1px;
+    @include for-tablet {
+        width: 160px;
+        padding-top: 5px;
+        margin-right: 24px;
+    }
 }
 
-button:hover {
+input:hover {
     background-color: black;
 }
 
-.comment__section--button {
-    @include displaytool(center,center,column);
-    padding-top: 16px;
-    padding-bottom: 32px;
-}
-
-button:focus {
+input:focus {
     outline: black;
 }
 
-#comment__submission {
-    // position: relative;
-    // left: 30px;
-    width: 100%;
-}
-
-#comment__section {
-    height: 160px;
-    border-top: 1px solid $all-merc;
-    border-bottom: 1px solid $all-merc;
+#venue, #location {
+    padding-top: 16px;
     padding-bottom: 24px;
-    width: 90%;
-    margin-left: 16px;
-    font-size: .8em;
+    @include for-tablet {
+    }
 }
 
-#userimg {
-    position: relative;
-    top: 45px;
-    background-color: $all-merc;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-}
-
-#username {
-    display: flex;
-    justify-content: flex-start;
-    position: relative;
-    width: 120px;
-    left: 60px;
-    bottom: 36px;
-    padding-top: 20px;
-    padding-bottom: 16px;
+#date {
     font-weight: bold;
-}
-
-#user__comment {
-    position: relative;
-    bottom: 40px;
-    left: 60px;
-    width: 75%;
-}
-
-#timestamp {
-    color: $lable-text-color;
-    display: flex;
-    justify-content: flex-end;
-    top: 36px;
+    padding-top: 16px;
+    padding-bottom: 24px;
 }
 
 // footer content lives here
@@ -480,10 +304,10 @@ button:focus {
 footer {
     background-color: $nav-bg;
     width: 100%;
-    margin-top: 30px;
 }
 
 .social__media {
+    padding-top: 24px;
     width: 100%;
     color: $text-border-color;
 
