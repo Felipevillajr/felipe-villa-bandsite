@@ -183,9 +183,10 @@ body {
 }
 @media (min-width: 720px) {
   .hero__tour__title {
-    bottom: 48vw;
+    bottom: 390px;
     font-size: 3.5vw;
     padding-left: 24px;
+    width: 50vw;
   }
 }
 @media (min-width: 1400px) {
@@ -201,7 +202,7 @@ body {
   left: 16px;
   color: #FFFFFF;
   font-weight: 900;
-  font-size: 11.25vw;
+  font-size: 2.1em;
   width: 88%;
   height: 60px;
 }
@@ -230,7 +231,7 @@ body {
   width: 90%;
   height: 110px;
   padding-left: 16px;
-  bottom: 140px;
+  bottom: 160px;
   border-radius: 7%;
 }
 @media (min-width: 720px) {
