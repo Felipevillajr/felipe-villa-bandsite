@@ -384,9 +384,9 @@ body {
 }
 .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
   box-sizing: border-box;
-  filter: grayscale(100%);
-  padding: 0 16px;
-  width: 100%;
+  filter: grayscale(0%);
+  margin: 0 16px;
+  width: 90%;
 }
 @media (min-width: 720px) {
   .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
@@ -400,7 +400,7 @@ body {
   }
 }
 .photo__gallery__item1:hover, .photo__gallery__item2:hover, .photo__gallery__item3:hover, .photo__gallery__item4:hover, .photo__gallery__item5:hover, .photo__gallery__item6:hover, .photo__gallery__item7:hover, .photo__gallery__item8:hover, .photo__gallery__item9:hover {
-  filter: grayscale(0%);
+  filter: grayscale(100%);
 }
 
 .comment__section--title {
@@ -409,6 +409,17 @@ body {
   padding-top: 32px;
   padding-bottom: 0px;
   margin-left: 16px;
+}
+@media (min-width: 720px) {
+  .comment__section--title {
+    font-size: 2.5em;
+  }
+}
+@media (min-width: 1400px) {
+  .comment__section--title {
+    font-size: 2.4em;
+    margin-left: 170px;
+  }
 }
 
 .comment--form__fieldset {
@@ -434,6 +445,18 @@ body {
   width: 48px;
   border-radius: 50%;
 }
+@media (min-width: 720px) {
+  #comment--form__img {
+    right: 236px;
+    height: 50px;
+    width: 50px;
+  }
+}
+@media (min-width: 1400px) {
+  #comment--form__img {
+    right: 250px;
+  }
+}
 
 #name, #comment {
   width: 163px;
@@ -444,9 +467,20 @@ body {
   font-weight: bold;
   letter-spacing: 1px;
 }
+@media (min-width: 720px) {
+  #name, #comment {
+    width: 360px;
+    font-weight: normal;
+  }
+}
+@media (min-width: 1400px) {
+  #name, #comment {
+    width: 425px;
+  }
+}
 
 input[name], #textarea {
-  border-radius: 5%;
+  border-radius: 4px;
   border: 2px solid #E1E1E1;
   position: relative;
   left: 29px;
@@ -455,14 +489,23 @@ input[name], #textarea {
   color: #323232;
   resize: none;
 }
+@media (min-width: 720px) {
+  input[name], #textarea {
+    width: 400px;
+    padding: 15px;
+  }
+}
+@media (min-width: 1400px) {
+  input[name], #textarea {
+    width: 455px;
+  }
+}
 
 input[name]:focus, #textarea:focus {
   outline: #323232;
-  border-radius: 5%;
+  border-radius: 4px;
   border: 2px solid #323232;
   position: relative;
-  width: 200px;
-  padding: 10px;
   color: #323232;
 }
 
@@ -484,6 +527,18 @@ button {
   overflow: hidden;
   perspective: 1px;
 }
+@media (min-width: 720px) {
+  button {
+    width: 170px;
+    height: 55px;
+    left: 14vw;
+  }
+}
+@media (min-width: 1400px) {
+  button {
+    left: 1vw;
+  }
+}
 
 button:hover {
   background-color: black;
@@ -497,6 +552,20 @@ button:hover {
   padding-top: 16px;
   padding-bottom: 32px;
 }
+@media (min-width: 720px) {
+  .comment__section--button {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1400px) {
+  .comment__section--button {
+    width: 68%;
+  }
+}
 
 button:focus {
   outline: black;
@@ -504,6 +573,7 @@ button:focus {
 
 #comment__submission {
   width: 100%;
+  margin-bottom: 50px;
 }
 
 #comment__section {
@@ -514,6 +584,18 @@ button:focus {
   width: 90%;
   margin-left: 16px;
   font-size: 0.8em;
+}
+@media (min-width: 720px) {
+  #comment__section {
+    margin-left: 100px;
+    width: 69%;
+  }
+}
+@media (min-width: 1400px) {
+  #comment__section {
+    margin-left: 30vw;
+    width: 40%;
+  }
 }
 
 #userimg {
@@ -542,6 +624,12 @@ button:focus {
   bottom: 40px;
   left: 60px;
   width: 75%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  white-space: normal;
 }
 
 #timestamp {
@@ -549,6 +637,11 @@ button:focus {
   display: flex;
   justify-content: flex-end;
   top: 36px;
+}
+@media (min-width: 1400px) {
+  #timestamp {
+    width: 45%;
+  }
 }
 
 footer {
