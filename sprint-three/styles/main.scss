@@ -27,7 +27,6 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; 
 }
 
 // navigation bar lives here
@@ -35,11 +34,12 @@ body {
 .navigation {
     background-color: $nav-bg;
     color: $lable-text-color;
-    height: 80px;
+    height: 86px;
     width: 100%;
 
     @include for-tablet {
         @include displaytool (flex-start, center, row);
+        height: 80px;
     }
 
     &__title {
@@ -99,12 +99,15 @@ body {
 // hero elements live here
 
 .hero {
+    position: relative;
+
 
     &__pic {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: auto;
     background-color: $nav-bg;
+    
 
     @include for-tablet {
         height: 60vw;
@@ -116,7 +119,7 @@ body {
 
     &__title {
         position: absolute;
-        top: 40vw;
+        top: 50vw;
         left: 16px;
         color: $all-white;
         font-weight: 900;
@@ -260,11 +263,12 @@ body {
     }
 }
 
-// photo gally lives here
+// photo gallery lives here
 
 
 .photo__gallery {
     box-sizing: border-box;
+    background-color: $field-text-bg;
     
     &__title {
         font-weight: 900;
@@ -303,11 +307,10 @@ body {
 
     &__item1, &__item2, &__item3, &__item4, &__item5, &__item6, &__item7, &__item8, &__item9 {
         box-sizing: border-box;
-        filter: grayscale(100%);
-        @include min-sizetool (72px, auto);
-        width: 100%;
-
-
+        filter: grayscale(0%);
+        margin: 0 16px;
+        width: 90%;
+        
         @include for-tablet {
             width: 28vw;
             margin: 12px;
@@ -318,20 +321,223 @@ body {
         }
     }
     &__item1:hover, &__item2:hover, &__item3:hover, &__item4:hover, &__item5:hover, &__item6:hover, &__item7:hover, &__item8:hover, &__item9:hover {
-        filter: grayscale(0%);
+        filter: grayscale(100%);
     }
 }
 
+// comment section styling lives here
+
+.comment__section--title {
+    font-size: 1.5em;
+    font-weight: 900;
+    padding-top: 32px;
+    padding-bottom: 0px;
+    margin-left: 16px;
+    @include for-tablet{
+        font-size: 2.5em;
+    }
+    @include for-desktop {
+        font-size: 2.4em;
+        margin-left: 170px;
+    }
+}
+
+.comment--form__fieldset {
+    border: none;
+    @include displaytool(center,center,column);
+}
+
+#comment {
+    padding-top: 32px;
+}
+
+#comment--form__img {
+    background-image: url(/assets/Images/Mohan-muruge.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 60px;
+    right: 120px;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    @include for-tablet {
+        right: 236px;
+        height: 50px;
+        width: 50px;
+    }
+    @include for-desktop {
+        right: 250px;
+    }
+}
+
+
+#name, #comment {
+    width: 163px;
+    color: $lable-text-color;
+    text-align: left;
+    font-size: .8em;
+    padding-bottom: 2px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    @include for-tablet {
+        width: 360px;
+        font-weight: normal;
+    }
+    @include for-desktop {
+        width: 425px;
+    }
+}
+
+
+input[name], #textarea {
+    border-radius: 4px;
+    border: 2px solid $all-merc;
+    position: relative;
+    left: 29px;
+    width: 200px;
+    padding: 10px;
+    color: $primary-p-text;
+    resize: none;
+    @include for-tablet{
+        width: 400px;
+        padding: 15px;
+    }
+    @include for-desktop {
+        width: 455px;
+    }
+}
+
+input[name]:focus , #textarea:focus {
+    outline: $primary-p-text;
+    border-radius: 4px;
+    border: 2px solid $primary-p-text;
+    position: relative;
+    color: $primary-p-text;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 10vw;
+    background-color: $primary-p-text;
+    color: $all-white;
+    width: 224px;
+    height: 50px;
+    border-radius: 4%;
+    margin-right: 16px;
+    font-size: 1em;
+    border: 2px solid $primary-p-text;
+    border-collapse: separate;
+    overflow: hidden;
+    perspective: 1px;
+    @include for-tablet{
+        width: 170px;
+        height: 55px;
+        left: 14vw;
+    }
+    @include for-desktop{
+        left: 1vw;
+    }
+}
+
+button:hover {
+    background-color: black;
+}
+
+.comment__section--button {
+    @include displaytool(center,center,column);
+    padding-top: 16px;
+    padding-bottom: 32px;
+    @include for-tablet {
+        width: 70%;
+        @include displaytool(center, flex-end, column);
+    }
+    @include for-desktop {
+        width: 68%;
+    }
+}
+
+button:focus {
+    outline: black;
+}
+
+#comment__submission {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#comment__section {
+    height: 160px;
+    border-top: 1px solid $all-merc;
+    border-bottom: 1px solid $all-merc;
+    padding-bottom: 24px;
+    width: 90%;
+    margin-left: 16px;
+    font-size: .8em;
+    @include for-tablet{
+        margin-left: 100px;
+        width: 69%;
+    }
+    @include for-desktop {
+        margin-left: 30vw;
+        width: 40%;
+    }
+}
+
+#userimg {
+    position: relative;
+    top: 45px;
+    background-color: $all-merc;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+#username {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    width: 120px;
+    left: 60px;
+    bottom: 36px;
+    padding-top: 20px;
+    padding-bottom: 16px;
+    font-weight: bold;
+}
+
+#user__comment {
+    position: relative;
+    bottom: 40px;
+    left: 60px;
+    width: 75%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+}
+
+#timestamp {
+    color: $lable-text-color;
+    display: flex;
+    justify-content: flex-end;
+    top: 36px;
+    @include for-desktop {
+        width: 45%;
+    }
+}
 
 // footer content lives here
 
 footer {
     background-color: $nav-bg;
     width: 100%;
+    margin-top: 30px;
 }
 
 .social__media {
-    padding-top: 24px;
     width: 100%;
     color: $text-border-color;
 

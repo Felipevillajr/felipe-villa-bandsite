@@ -53,13 +53,12 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 .navigation {
   background-color: #323232;
   color: #AFAFAF;
-  height: 80px;
+  height: 86px;
   width: 100%;
 }
 @media (min-width: 720px) {
@@ -68,6 +67,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
+    height: 80px;
   }
 }
 @media (min-width: 720px) {
@@ -144,9 +144,12 @@ body {
   flex-direction: none;
 }
 
+.hero {
+  position: relative;
+}
 .hero__pic {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: auto;
   background-color: #323232;
 }
@@ -162,7 +165,7 @@ body {
 }
 .hero__title {
   position: absolute;
-  top: 40vw;
+  top: 50vw;
   left: 16px;
   color: #FFFFFF;
   font-weight: 900;
@@ -327,6 +330,7 @@ body {
 
 .photo__gallery {
   box-sizing: border-box;
+  background-color: #FAFAFA;
 }
 .photo__gallery__title {
   font-weight: 900;
@@ -380,10 +384,9 @@ body {
 }
 .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
   box-sizing: border-box;
-  filter: grayscale(100%);
-  min-width: 72px;
-  min-height: auto;
-  width: 100%;
+  filter: grayscale(0%);
+  margin: 0 16px;
+  width: 90%;
 }
 @media (min-width: 720px) {
   .photo__gallery__item1, .photo__gallery__item2, .photo__gallery__item3, .photo__gallery__item4, .photo__gallery__item5, .photo__gallery__item6, .photo__gallery__item7, .photo__gallery__item8, .photo__gallery__item9 {
@@ -397,16 +400,257 @@ body {
   }
 }
 .photo__gallery__item1:hover, .photo__gallery__item2:hover, .photo__gallery__item3:hover, .photo__gallery__item4:hover, .photo__gallery__item5:hover, .photo__gallery__item6:hover, .photo__gallery__item7:hover, .photo__gallery__item8:hover, .photo__gallery__item9:hover {
-  filter: grayscale(0%);
+  filter: grayscale(100%);
+}
+
+.comment__section--title {
+  font-size: 1.5em;
+  font-weight: 900;
+  padding-top: 32px;
+  padding-bottom: 0px;
+  margin-left: 16px;
+}
+@media (min-width: 720px) {
+  .comment__section--title {
+    font-size: 2.5em;
+  }
+}
+@media (min-width: 1400px) {
+  .comment__section--title {
+    font-size: 2.4em;
+    margin-left: 170px;
+  }
+}
+
+.comment--form__fieldset {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#comment {
+  padding-top: 32px;
+}
+
+#comment--form__img {
+  background-image: url(/assets/Images/Mohan-muruge.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 60px;
+  right: 120px;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+}
+@media (min-width: 720px) {
+  #comment--form__img {
+    right: 236px;
+    height: 50px;
+    width: 50px;
+  }
+}
+@media (min-width: 1400px) {
+  #comment--form__img {
+    right: 250px;
+  }
+}
+
+#name, #comment {
+  width: 163px;
+  color: #AFAFAF;
+  text-align: left;
+  font-size: 0.8em;
+  padding-bottom: 2px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+@media (min-width: 720px) {
+  #name, #comment {
+    width: 360px;
+    font-weight: normal;
+  }
+}
+@media (min-width: 1400px) {
+  #name, #comment {
+    width: 425px;
+  }
+}
+
+input[name], #textarea {
+  border-radius: 4px;
+  border: 2px solid #E1E1E1;
+  position: relative;
+  left: 29px;
+  width: 200px;
+  padding: 10px;
+  color: #323232;
+  resize: none;
+}
+@media (min-width: 720px) {
+  input[name], #textarea {
+    width: 400px;
+    padding: 15px;
+  }
+}
+@media (min-width: 1400px) {
+  input[name], #textarea {
+    width: 455px;
+  }
+}
+
+input[name]:focus, #textarea:focus {
+  outline: #323232;
+  border-radius: 4px;
+  border: 2px solid #323232;
+  position: relative;
+  color: #323232;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 10vw;
+  background-color: #323232;
+  color: #FFFFFF;
+  width: 224px;
+  height: 50px;
+  border-radius: 4%;
+  margin-right: 16px;
+  font-size: 1em;
+  border: 2px solid #323232;
+  border-collapse: separate;
+  overflow: hidden;
+  perspective: 1px;
+}
+@media (min-width: 720px) {
+  button {
+    width: 170px;
+    height: 55px;
+    left: 14vw;
+  }
+}
+@media (min-width: 1400px) {
+  button {
+    left: 1vw;
+  }
+}
+
+button:hover {
+  background-color: black;
+}
+
+.comment__section--button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 16px;
+  padding-bottom: 32px;
+}
+@media (min-width: 720px) {
+  .comment__section--button {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1400px) {
+  .comment__section--button {
+    width: 68%;
+  }
+}
+
+button:focus {
+  outline: black;
+}
+
+#comment__submission {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#comment__section {
+  height: 160px;
+  border-top: 1px solid #E1E1E1;
+  border-bottom: 1px solid #E1E1E1;
+  padding-bottom: 24px;
+  width: 90%;
+  margin-left: 16px;
+  font-size: 0.8em;
+}
+@media (min-width: 720px) {
+  #comment__section {
+    margin-left: 100px;
+    width: 69%;
+  }
+}
+@media (min-width: 1400px) {
+  #comment__section {
+    margin-left: 30vw;
+    width: 40%;
+  }
+}
+
+#userimg {
+  position: relative;
+  top: 45px;
+  background-color: #E1E1E1;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+#username {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  width: 120px;
+  left: 60px;
+  bottom: 36px;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  font-weight: bold;
+}
+
+#user__comment {
+  position: relative;
+  bottom: 40px;
+  left: 60px;
+  width: 75%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  white-space: normal;
+}
+
+#timestamp {
+  color: #AFAFAF;
+  display: flex;
+  justify-content: flex-end;
+  top: 36px;
+}
+@media (min-width: 1400px) {
+  #timestamp {
+    width: 45%;
+  }
 }
 
 footer {
   background-color: #323232;
   width: 100%;
+  margin-top: 30px;
 }
 
 .social__media {
-  padding-top: 24px;
   width: 100%;
   color: #E1E1E1;
 }

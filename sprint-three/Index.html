@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/main.css" />
+    
     <title>BANDSITE</title>
 </head>
 <body>
     <Header>
         <nav class="navigation">
-            <div class="navigation__title"><img src="./assets/Logo/Logo-bandsite.svg"></a></div>
+            <div class="navigation__title"><a href="./Index.html"><img src="./assets/Logo/Logo-bandsite.svg"></a></div>
             <section class="navigation__bar">       
-                <a href="#" ><div class="navigation__bar--left">Biography</div></a>
-                <a href="#" ><div class="navigation__bar--right">Shows</div></a>
+                <a href="./Index.html" ><div class="navigation__bar--left">Biography</div></a>
+                <a href="./pages/shows.html" ><div class="navigation__bar--right">Shows</div></a>
             </section>
         </nav>
     </Header>
@@ -59,12 +60,31 @@
         <img class="photo__gallery__item9" alt= concert9 src="./assets/Images/Photo-gallery-9.jpg" />
     </div>
 </section>
+<section class="comment__section">
+    <h1 class="comment__section--title">Join the Conversation</h1>
+    <form id="commentForm" class="comment--form">
+        <fieldset class="comment--form__fieldset">
+            <div id="comment--form__img"></div>
+            <label id='name' for="Name">NAME</label>
+            <input type="text" id="name__form" name='name' placeholder="Enter your name"
+            required /> 
+            <label id="comment" for="commentText" >COMMENT</label>
+            <textarea id="textarea" type="textarea"  name="textarea" placeholder="Add a new comment" rows="5" cols="40" value='textarea' ></textarea>
+        </fieldset>
+        <div  class="comment__section--button" >
+            <button class="comment__section--button--here" name="submit">COMMENT</button>
+            </div>
+    </form>
+</section>
+<section id="comment__submmited"></section>
+<section id="comment__submission"> </section>
+
 <footer>
     <section class="social__media">
         <div class="social__media__title">Get In Touch</div>
         <a href="http://instagram.com"><img src="./assets/Icons/SVG/Icon-instagram.svg" alt="instagram__logo" class="social__media__logo--instagram"  /></a>
-        <a href="#"><img src="./assets/Icons/SVG/Icon-facebook.svg" alt="facebook__logo" class="social__media__logo--facebook"  /></a>
-        <a href="#"><img src="./assets/Icons/SVG/Icon-twitter.svg" alt="twitter__logo" class="social__media__logo--twitter"  /></a>
+        <a href="http://facebook.com"><img src="./assets/Icons/SVG/Icon-facebook.svg" alt="facebook__logo" class="social__media__logo--facebook"  /></a>
+        <a href="http://twitter.com"><img src="./assets/Icons/SVG/Icon-twitter.svg" alt="twitter__logo" class="social__media__logo--twitter"  /></a>
         <div class="social__media__bandsite__logo">
         </div>
     </section>
@@ -108,5 +128,6 @@
         </div>
     </div>
 </footer>
+<script src="./scripts/index-page.js"></script>
 </body>
 </html>
