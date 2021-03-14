@@ -268,7 +268,7 @@ body {
     @include for-tablet {
         box-sizing: border-box;
         @include displaytool(space-between, center, row);
-        width: 736px;
+        width: 90vw;
         overflow: hidden;
         margin-left: 24px;
         
@@ -328,6 +328,11 @@ input:focus {
     font-weight: bold;
     padding-top: 16px;
     padding-bottom: 24px;
+}
+
+#venue, #location, #date {
+    font-size: .8em;
+    width: 33%;
 }
 
 // footer content lives here

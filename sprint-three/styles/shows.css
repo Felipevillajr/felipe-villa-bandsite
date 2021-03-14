@@ -339,7 +339,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    width: 736px;
+    width: 90vw;
     overflow: hidden;
     margin-left: 24px;
   }
@@ -401,6 +401,11 @@ input:focus {
   font-weight: bold;
   padding-top: 16px;
   padding-bottom: 24px;
+}
+
+#venue, #location, #date {
+  font-size: 0.8em;
+  width: 33%;
 }
 
 footer {
