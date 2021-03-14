@@ -13,10 +13,22 @@ const comment = document.querySelector('#comment__submmited')
 
 axios.get(urlComments)
     .then((res) => {
-    const comments = res.data
+    let comments = res.data
+    const sortedComments = [];
+    comments.sort(() => {
+        let newComments = [];
+        let oldComments = [];
+        if(comments.timestamp === "1530744138878") {
+            oldComments.push();
+        } else { newComments.push()}
+        return ;
+    }) 
+    
+    console.log(sortedComments)
 
     let commentDivHTML= document.querySelector("#comment__submmited");
-
+    
+    
 
     let myNewHTML = comments.map(
         child => {
@@ -34,9 +46,6 @@ axios.get(urlComments)
         commentDivHTML.innerHTML += myNewHTML ;
         
 });
-
-
-
 
 
 form.addEventListener('submit', (e) => {
